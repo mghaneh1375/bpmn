@@ -1,0 +1,205 @@
+
+ .bpp-properties-panel {
+	 position: relative;
+}
+ .bpp-properties-panel:empty {
+	 display: none;
+}
+ .bpp-properties-panel label, .bpp-properties-panel input {
+	 vertical-align: middle;
+}
+ .bpp-properties-panel input, .bpp-properties-panel button, .bpp-properties-panel textarea, .bpp-properties-panel [contenteditable] {
+	 padding: 3px 6px;
+	 border: 1px solid ;
+}
+ .bpp-properties-panel input.invalid:focus, .bpp-properties-panel button.invalid:focus, .bpp-properties-panel textarea.invalid:focus, .bpp-properties-panel [contenteditable].invalid:focus {
+	 box-shadow: 0 0 1px 2px #c0c0c0;
+}
+ .bpp-properties-panel [type=text], .bpp-properties-panel [contenteditable], .bpp-properties-panel textarea, .bpp-properties-panel select {
+	 width: 100%;
+}
+ .bpp-properties-panel [contenteditable], .bpp-properties-panel textarea {
+	 resize: vertical;
+}
+ .bpp-properties-panel [contenteditable] {
+	 outline: 0px solid transparent;
+	 background-color: white;
+	 overflow-y: auto;
+	 white-space: pre-wrap;
+	 white-space: -moz-pre-wrap;
+	 white-space: -pre-wrap;
+	 white-space: -o-pre-wrap;
+	 word-wrap: break-word;
+}
+ .bpp-properties-panel [contenteditable]:before {
+	 content: "\feff ";
+}
+ .bpp-properties-panel [disabled] {
+	 color: #808080;
+}
+ .bpp-properties-panel label {
+	 margin-bottom: 3px;
+}
+ .bpp-properties-panel .entry-label {
+	 font-size: 120%;
+	 margin-top: 5px;
+	 margin-bottom: 10px;
+	 transition: margin 0.218s linear;
+	 font-style: italic;
+}
+ .bpp-properties-panel .entry-label.divider {
+	 border-top: 1px dotted #ccc;
+	 padding-top: 8px;
+	 margin-top: 16px;
+	 width: 100%;
+}
+ .bpp-error-message, .bpp-error-message.bpp-entry-link {
+	 margin-top: 5px;
+	 color: ;
+}
+ .bpp-row {
+	 margin-top: 10px;
+	 margin-bottom: 10px;
+}
+ .bpp-row:first-of-type {
+	 margin-top: 0;
+}
+ .bpp-row:last-of-type {
+	 margin-bottom: 0;
+}
+ .bpp-textfield, .bpp-textbox {
+	 margin-bottom: 3px;
+}
+ .bpp-radios-group {
+	 list-style: none;
+	 padding: 0;
+	 margin: 0 0 9px 0;
+}
+ .bpp-radios-group .bpp-radio-wrapper {
+	 margin: 6px 0;
+}
+ .bpp-radios-group input, .bpp-radios-group label {
+	 vertical-align: middle;
+}
+ .bpp-radios-group input {
+	 margin-top: 0;
+	 margin-left: 0;
+}
+ .bpp-radios-group input, .bpp-checkbox input {
+	 margin-left: 0;
+}
+ .bpp-radios-group label:after, .bpp-checkbox label:after {
+	 display: none;
+}
+ .bpp-textfield input {
+	 padding-right: 28px;
+}
+ .bpp-textfield .clear {
+	 background: transparent;
+	 border: none;
+	 top: 0;
+	 right: 0;
+}
+ .bpp-combo-input {
+	 margin-top: 7px;
+}
+ .bpp-select select {
+	 height: 23px;
+}
+ .bpp-select button.add {
+	 top: -22px;
+	 right: 0;
+}
+ .bpp-select button.add, .bpp-select button.clear, .bpp-element-list button.add, .bpp-element-list button.clear {
+	 top: -23px;
+	 border-bottom: none;
+}
+ .bpp-select button.add, .bpp-element-list button.add {
+	 right: 0px;
+}
+ .bpp-select button.clear, .bpp-element-list button.clear {
+	 right: 23px;
+}
+ .bpp-properties-entry {
+	 margin-bottom: 9px;
+}
+ .bpp-properties-entry .bpp-field-wrapper {
+	 position: relative;
+}
+ .bpp-properties-entry .bpp-field-wrapper input[readonly] + .clear {
+	 display: none;
+}
+ .bpp-properties-entry .bpp-field-wrapper select {
+	 resize: vertical;
+}
+ .bpp-hidden {
+	 display: none;
+}
+ label.bpp-hidden {
+	 display: none;
+}
+ .bpp-table-add-row > button {
+	 position: relative;
+	 margin-left: 10px;
+}
+ .bpp-table {
+	 margin-top: 10px;
+}
+ .bpp-table-row {
+	 margin-bottom: 2px;
+	 overflow: hidden;
+}
+ .bpp-table-row > input, .bpp-table-row > button {
+	 float: left;
+}
+ .bpp-table-row > label {
+	 padding-left: 5px;
+}
+ .bpp-table-row > label.bpp-table-row-columns-1, .bpp-table-row > input.bpp-table-row-columns-1 {
+	 width: 100%;
+}
+ .bpp-table-row > label.bpp-table-row-columns-1.bpp-table-row-removable, .bpp-table-row > input.bpp-table-row-columns-1.bpp-table-row-removable {
+	 width: calc(100% - 24px);
+}
+ .bpp-table-row > label.bpp-table-row-columns-2, .bpp-table-row > input.bpp-table-row-columns-2 {
+	 width: 50%;
+	 box-sizing: border-box;
+}
+ .bpp-table-row > label.bpp-table-row-columns-2.bpp-table-row-removable, .bpp-table-row > input.bpp-table-row-columns-2.bpp-table-row-removable {
+	 width: calc(50% - 12px);
+}
+ .bpp-table-row > label.bpp-table-row-columns-2:nth-child(2), .bpp-table-row > input.bpp-table-row-columns-2:nth-child(2) {
+	 border-left: none;
+}
+ .bpp-table-row > button {
+	 border-left: none;
+	 position: static;
+}
+ .bpp-properties-static {
+	 margin-bottom: 0;
+	 margin-top: 0;
+	 border: 1px solid ;
+	 background-color: white;
+	 padding: 3px 6px;
+	 font: 13.3333px Arial;
+	 width: 100%;
+}
+ .bpp-entry-link {
+	 cursor: pointer;
+	 color: ;
+}
+ .bpp-icon-warning:before {
+	 content: '\E806';
+}
+ .bpp-field-description {
+	 margin-top: 5px;
+	 color: #999;
+}
+ .bpp-field-description a {
+	 color: #c0c0c0;
+	 text-decoration: none;
+}
+ .bpp-field-description a:hover {
+	 color: ;
+}
+ 

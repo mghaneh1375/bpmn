@@ -1,0 +1,32 @@
+.bpp-properties-header {
+	 padding: 15px;
+	 padding-bottom: 5px;
+}
+ .bpp-properties-header > .label {
+	 font-size: 120%;
+	 font-weight: bolder;
+}
+ .bpp-properties-header > .search {
+	 display: none;
+	 margin-top: 5px;
+	 position: relative;
+}
+ .bpp-properties-header > .search input {
+	 position: relative;
+	 border-radius: 15px;
+	 width: 100%;
+	 z-index: 1;
+}
+ .bpp-properties-header > .search button {
+	 position: absolute;
+	 top: 0;
+	 bottom: 0;
+	 right: 0;
+	 border: none;
+	 background-color: transparent;
+	 z-index: 2;
+}
+ .bpp-properties-header > .search button:before {
+	 content: '\E805';
+}
+ 

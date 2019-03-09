@@ -1,0 +1,63 @@
+.bpp-properties-tab-bar {
+	 border-bottom: 1px solid ;
+	 padding: 0 15px;
+}
+ .bpp-properties-tab-bar .scroll-tabs-button {
+	 cursor: pointer;
+	 font-size: 16px;
+	 padding: 3px 4px 3px 4px;
+	 color: ;
+}
+ .bpp-properties-tab-bar .scroll-tabs-button:hover {
+	 font-weight: bold;
+}
+ .bpp-properties-tab-bar .scroll-tabs-button.scroll-tabs-left {
+	 float: left;
+	 margin-left: -15px;
+}
+ .bpp-properties-tab-bar .scroll-tabs-button.scroll-tabs-right {
+	 float: right;
+	 margin-right: -15px;
+}
+ .bpp-properties-tab-bar:not(.scroll-tabs-overflow) .scroll-tabs-button {
+	 display: none;
+}
+ ul.bpp-properties-tabs-links {
+	 margin: 5px 0 -1px 0;
+	 padding: 0;
+	 white-space: nowrap;
+	 overflow: hidden;
+}
+ ul.bpp-properties-tabs-links > li {
+	 display: inline-block;
+	 margin: 0;
+}
+ ul.bpp-properties-tabs-links > li > a {
+	 display: inline-block;
+	 font-size: 12px;
+	 padding: 4px 7px;
+	 border: 1px solid ;
+	 border-radius: 3px 3px 0 0;
+	 border-bottom: transparent;
+	 background-color: ;
+	 color: ;
+	 text-decoration: none;
+}
+ ul.bpp-properties-tabs-links > li > a:hover {
+	 color: #c0c0c0;
+}
+ ul.bpp-properties-tabs-links > li + li {
+	 margin-left: 4px;
+}
+ ul.bpp-properties-tabs-links > li.bpp-active a {
+	 padding-bottom: 5px;
+	 border-top: 2px solid ;
+	 border-bottom: none;
+}
+ .bpp-properties-tab, .bpp-properties-tab.bpp-hidden {
+	 display: none;
+}
+ .bpp-properties-tab.bpp-active {
+	 display: block;
+}
+ 

@@ -1,0 +1,262 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/bpmn-js@3.1.0/dist/assets/diagram-js.css">
+    <link rel="stylesheet" href="https://unpkg.com/bpmn-js@3.1.0/dist/assets/bpmn-font/css/bpmn.css">
+
+    <link rel="stylesheet" href="./groups.css" />
+    <link rel="stylesheet" href="./tabs.css" />
+    <link rel="stylesheet" href="./properties.css" />
+    <link rel="stylesheet" href="./listeners.css" />
+    <link rel="stylesheet" href="./header.css" />
+
+
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+    <style>
+        .djs-direct-editing-parent {
+            display: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .djs-palette {
+            max-width: 50px;
+            overflow: auto;
+        }
+        svg {
+            margin-left: 100px;
+        }
+        .popup {
+            z-index: 1000001;
+            position: absolute;
+            top: 30%;
+            height: 40%;
+            width: 40%;
+            left: 30%;
+            background-color: #f7cbcf;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+            color: white;
+            display: none;
+        }
+        .select2-container {
+            width: 100% !important;
+        }
+
+        .select2-results {
+            z-index: 10000001 !important;
+        }
+
+        .select2-dropdown, .select2-dropdown--below {
+            z-index: 10000001 !important;
+        }
+
+        .dark {
+            background-color: rgba(217, 219, 222, 0.18);
+            z-index: 10001;
+            height: 200vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+    </style>
+
+    <script>
+
+        var selectedElementMine = null;
+
+    </script>
+
+</head>
+
+<body>
+
+    <div class="dark hidden"></div>
+
+    <div>
+
+        <div style="width: 80%; float: left">
+            <div id="canvas"></div>
+        </div>
+
+        <div style="width: 20%; float: left">
+            <div id="js-properties-panel"></div>
+        </div>
+    </div>
+
+    <div>
+        <button id="saveBtn">save</button>
+    </div>
+
+    <!--<div>-->
+        <!--<div style="width: 80%; float: left">-->
+            <!--<div id="canvas2"></div>-->
+        <!--</div>-->
+        <!--<div style="width: 20%; float: left">-->
+            <!--<div id="js-properties-panel2"></div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="popup" id="taskPopup">
+        <div class="djs-palette open" style="width: 300px; max-width: 300px; touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+            <div class="djs-palette-entries">
+                <div class="group" data-group="tools">
+                    <div id="lozi" data-clicked="0" style="float: none; height: 80px" class="entry bpmn-icon-gateway-none" draggable="true" data-text="lozi" data-action="create.task" title="Create Task">
+                        لوزی
+                    </div>
+
+                    <div id="rectangle" data-clicked="0" style="float: none; height: 80px" class="entry bpmn-icon-gateway-none" draggable="true" data-text="mostatil" data-action="create.task" title="Create Task">
+            مستطیل
+                    </div>
+
+                    <div id="ring" data-clicked="0" style="float: none; height: 80px" class="entry bpmn-icon-gateway-none" draggable="true" data-text="dayere" data-action="create.task" title="Create Task">
+            دایره
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="selectPopup">
+
+        <div style="min-width: 200px; margin: 20px auto; width: fit-content;">
+            <select onchange='selectItem(this.value, this.options[this.selectedIndex].text)' class="js-example-basic-single" id="select"></select>
+        </div>
+
+        <div id="items" class="row" style="padding: 20px; margin-top: 20px; height: 50px"></div>
+
+        <div style="margin: 20px auto; width: fit-content;">
+            <button id="done" class="btn btn-success" onclick="done()">ok</button>
+            <button class="btn btn-danger" onclick="$('#selectPopup').css('display', 'none'); $('.dark').addClass('hidden')">cancel</button>
+        </div>
+    </div>
+
+    <script src="./app.bundled.js"></script>
+
+    <script>
+
+        var selectedItems = [];
+        var selectedItemsName = [];
+
+        function eventFire(el, etype){
+            if (el.fireEvent) {
+                el.fireEvent('on' + etype);
+            } else {
+                var evObj = document.createEvent('Events');
+                evObj.initEvent(etype, true, false);
+                el.dispatchEvent(evObj);
+            }
+        }
+
+        function showPopupSelect() {
+
+            $.ajax({
+                type: 'post',
+                url: 'http://localhost/bp/getOptions.php',
+                data: {
+                    'kind': 'task'
+                },
+                success: function (response) {
+                    response = JSON.parse(response);
+
+                    var newElement = "<option value='-1'>Choose responsible</option>";
+
+                    for(var i = 0; i < response.length; i++) {
+                        newElement += "<option value='" + response[i].value + "'>" + response[i].name + "</option>";
+                    }
+
+                    $(".dark").removeClass('hidden');
+                    $("#select").empty().append(newElement);
+                    $("#selectPopup").css('display', 'block');
+                    $('.js-example-basic-single').select2();
+
+                    console.log(selectedElementMine, null, 4);
+                }
+            });
+        }
+
+        function selectItem(val, name) {
+
+            if(val == -1)
+                return;
+
+            var allow = true, size = selectedItems.length;
+
+            for(i = 0; i < size; i++) {
+                if(selectedItems[i] == val) {
+                    allow = false;
+                    break;
+                }
+            }
+
+            if(allow) {
+                selectedItems[size] = val;
+                selectedItemsName[size] = name;
+                var newElement = "<div class='btn btn-primary col-xs-3' id='item_" + size + "' style='color: white; float:right; margin: 10px; text-align: center; width: fit-content; border: 1px solid black; border-radius: 6px; padding: 7px;'><span>" + name + "</span>";
+                newElement += "<span class='glyphicon glyphicon-remove' onclick='deleteItem(" + size + ")'></span>";
+                newElement += "</div>";
+                $("#items").append(newElement);
+            }
+
+        }
+
+        function showAllDoneItems() {
+
+            var newElement = "", size = selectedItems.length;
+
+            for(i = 0; i < selectedItems.length; i++) {
+                newElement += "<div class='btn btn-primary col-xs-6' id='item_" + size + "' style='color: white; float:right; margin: 10px; text-align: center; width: fit-content; border: 1px solid black; border-radius: 6px; padding: 7px;'><span>" + selectedItemsName[i] + "</span>";
+                newElement += "<span class='glyphicon glyphicon-remove' onclick='deleteItem(" + size + ")'></span>";
+                newElement += "</div>";
+            }
+
+            $("#itemBoxes").empty().append(newElement);
+
+        }
+
+        function done() {
+
+            var text = "", size = selectedItems.length;
+
+            for(i = 0; i < size; i++) {
+                text += selectedItemsName[i] + " - ";
+            }
+
+            showAllDoneItems();
+
+            $(".dark").addClass('hidden');
+            $("#selectPopup").css('display', 'none');
+//            $("#camunda-process-is-Responsible").empty().append(text).focus();
+
+//            var element;
+//
+//            $('.djs-element').filter(function( index ) {
+//                if($(this).hasClass('selected')) {
+//                    element = $(this);
+//                    return;
+//                }
+//            });
+
+//            eventFire(document.getElementById('camunda-process-is-Responsible'), 'click');
+        }
+
+        function deleteItem(i) {
+            selectedItems.splice(i, 1);
+            selectedItemsName.splice(i, 1);
+            $("#item_" + i).remove();
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+.bpp-properties-group {
+	 padding: 6px 15px 6px 15px;
+	 position: relative;
+	 overflow: hidden;
+	 transition: max-height 0.218s ease-in-out, padding-top 0.218s ease-in-out, padding-bottom 0.218s ease-in-out;
+}
+ .bpp-properties-group:empty {
+	 display: none;
+}
+ .bpp-properties-group > .group-toggle {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 bottom: 0;
+	 width: 4px;
+	 cursor: pointer;
+	 transition: background-color 0.218s linear;
+}
+ .bpp-properties-group > .group-toggle:hover {
+	 background-color: ;
+}
+ .bpp-properties-group > .group-label {
+	 font-size: 120%;
+	 margin-top: 5px;
+	 margin-bottom: 10px;
+	 transition: margin 0.218s linear;
+	 font-style: italic;
+}
+ .bpp-properties-group:hover > .group-toggle {
+	 background-color: ;
+}
+ .bpp-properties-group:hover > .group-toggle:hover {
+	 background-color: ;
+}
+ .bpp-properties-group.group-closed {
+	 max-height: 20px;
+	 border-top: none;
+	 cursor: pointer;
+	 padding-top: 0;
+	 padding-bottom: 0;
+}
+ .bpp-properties-group.group-closed > div {
+	 visibility: hidden;
+}
+ .bpp-properties-group.group-closed > .group-label {
+	 margin-top: 2px;
+	 margin-bottom: 2px;
+}
+ .bpp-properties-group.group-closed:hover > .group-label {
+	 color: ;
+}
+ .bpp-properties-group + .bpp-properties-group {
+	 border-top: 1px dotted ;
+}
+ .bpp-properties-group:last-child {
+	 padding-bottom: 9px;
+}
+ 
