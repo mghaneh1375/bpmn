@@ -10,6 +10,69 @@
     <link rel="stylesheet" href="./listeners.css" />
     <link rel="stylesheet" href="./header.css" />
 
+    <style>
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: 900;
+            src: url('../fonts/eot/IRANSansWeb_Black.eot');
+            src: url('../fonts/eot/IRANSansWeb_Black.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+            url('../fonts/woff2/IRANSansWeb_Black.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+            url('../fonts/woff/IRANSansWeb_Black.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+            url('../fonts/ttf/IRANSansWeb_Black.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: bold;
+            src: url('../fonts/eot/IRANSansWeb_Bold.eot');
+            src: url('../fonts/eot/IRANSansWeb_Bold.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+            url('../fonts/woff2/IRANSansWeb_Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+            url('../fonts/woff/IRANSansWeb_Bold.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+            url('../fonts/ttf/IRANSansWeb_Bold.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: 500;
+            src: url('../fonts/eot/IRANSansWeb_Medium.eot');
+            src: url('../fonts/eot/IRANSansWeb_Medium.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+            url('../fonts/woff2/IRANSansWeb_Medium.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+            url('../fonts/woff/IRANSansWeb_Medium.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+            url('../fonts/ttf/IRANSansWeb_Medium.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: 300;
+            src: url('../fonts/eot/IRANSansWeb_Light.eot');
+            src: url('../fonts/eot/IRANSansWeb_Light.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+            url('../fonts/woff2/IRANSansWeb_Light.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+            url('../fonts/woff/IRANSansWeb_Light.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+            url('../fonts/ttf/IRANSansWeb_Light.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: 200;
+            src: url('../fonts/eot/IRANSansWeb_UltraLight.eot');
+            src: url('../fonts/eot/IRANSansWeb_UltraLight.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+            url('../fonts/woff2/IRANSansWeb_UltraLight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+            url('../fonts/woff/IRANSansWeb_UltraLight.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+            url('../fonts/ttf/IRANSansWeb_UltraLight.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: IRANSans;
+            font-style: normal;
+            font-weight: normal;
+            src: url('../fonts/eot/IRANSansWeb.eot');
+            src: url('../fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+            url('../fonts/woff2/IRANSansWeb.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/
+            url('../fonts/woff/IRANSansWeb.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+            url('../fonts/ttf/IRANSansWeb.ttf') format('truetype');
+        }
+
+    </style>
 
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -19,6 +82,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
     <style>
+
+        .bpp-properties-entry {
+            direction: rtl;
+        }
+
         .djs-direct-editing-parent {
             display: none;
         }
@@ -41,7 +109,7 @@
             height: 40%;
             width: 40%;
             left: 30%;
-            background-color: #f7cbcf;
+            background-color: #e2e2e2;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
             color: white;
@@ -69,17 +137,23 @@
             width: 100%;
         }
 
+        .select2-results__option {
+            text-align: right;
+            direction: rtl;
+        }
+
     </style>
 
     <script>
 
         var selectedElementMine = null;
+        var selectedId;
 
     </script>
 
 </head>
 
-<body>
+<body style="font-family: IRANSans !important;">
 
     <div class="dark hidden"></div>
 
@@ -95,7 +169,7 @@
     </div>
 
     <div>
-        <button id="saveBtn">save</button>
+        <button style="margin-top: 20px" class="btn btn-success" id="saveBtn">ذخیره</button>
     </div>
 
     <!--<div>-->
@@ -129,15 +203,15 @@
 
     <div class="popup" id="selectPopup">
 
-        <div style="min-width: 200px; margin: 20px auto; width: fit-content;">
-            <select onchange='selectItem(this.value, this.options[this.selectedIndex].text)' class="js-example-basic-single" id="select"></select>
+        <div style="min-width: 200px; margin: 20px auto; width: 100%; text-align: center; direction: rtl">
+            <select onchange='selectItem(this.value, this.options[this.selectedIndex].text)' style="text-align: right; direction: rtl" class="js-example-basic-single" id="select"></select>
         </div>
 
         <div id="items" class="row" style="padding: 20px; margin-top: 20px; height: 50px"></div>
 
         <div style="margin: 20px auto; width: fit-content;">
-            <button id="done" class="btn btn-success" onclick="done()">ok</button>
-            <button class="btn btn-danger" onclick="$('#selectPopup').css('display', 'none'); $('.dark').addClass('hidden')">cancel</button>
+            <button id="done" class="btn btn-success" onclick="done()">تایید</button>
+            <button class="btn btn-danger" onclick="$('#selectPopup').css('display', 'none'); $('.dark').addClass('hidden')">لغو</button>
         </div>
     </div>
 
@@ -164,12 +238,17 @@
                 type: 'post',
                 url: 'http://localhost/bp/getOptions.php',
                 data: {
-                    'kind': 'task'
+                    'kind': selectedId
                 },
                 success: function (response) {
+
+                    selectedItems = [];
+                    selectedItemsName = [];
+                    $(".selectedItemClass").remove();
+
                     response = JSON.parse(response);
 
-                    var newElement = "<option value='-1'>Choose responsible</option>";
+                    var newElement = "<option value='-1'>مسئول مورد نظر خود را انتخاب نمایید</option>";
 
                     for(var i = 0; i < response.length; i++) {
                         newElement += "<option value='" + response[i].value + "'>" + response[i].name + "</option>";
@@ -202,7 +281,7 @@
             if(allow) {
                 selectedItems[size] = val;
                 selectedItemsName[size] = name;
-                var newElement = "<div class='btn btn-primary col-xs-3' id='item_" + size + "' style='color: white; float:right; margin: 10px; text-align: center; width: fit-content; border: 1px solid black; border-radius: 6px; padding: 7px;'><span>" + name + "</span>";
+                var newElement = "<div class='selectedItemClass btn btn-primary col-xs-3' id='item_" + size + "' style='color: white; float:right; margin: 10px; text-align: center; width: fit-content; border: 1px solid black; border-radius: 6px; padding: 7px;'><span>" + name + "</span>";
                 newElement += "<span class='glyphicon glyphicon-remove' onclick='deleteItem(" + size + ")'></span>";
                 newElement += "</div>";
                 $("#items").append(newElement);
@@ -220,7 +299,7 @@
                 newElement += "</div>";
             }
 
-            $("#itemBoxes").empty().append(newElement);
+            $("#" + selectedId).empty().append(newElement);
 
         }
 

@@ -102,30 +102,6 @@ getDiagram();
 // var eventBus = new EventBus();
 //
 $("#done").click(function (event) {
-    modeler.saveXML({ format: true }, function(err, xml) {
-
-        // var url = 'http://localhost/bp/index.php';
-        var url = 'http://bp.vcu.ir/index.php';
-
-        if (err) {
-            return console.error('could not save BPMN 2.0 diagram', err);
-        }
-
-        $.ajax({
-            type: 'post',
-            url: url,
-            data: {
-                'xml': xml
-            },
-            success: function (response) {
-                // alert('Diagram exported. Check the developer tools!');
-                alert(response);
-            }
-        });
-
-        console.log('DIAGRAM', xml);
-    });
-//
 //     event = {
 //         "element": selectedElementMine,
 //         "gfx": {},
@@ -144,8 +120,8 @@ $("#done").click(function (event) {
 $("#saveBtn").click(function () {
     modeler.saveXML({ format: true }, function(err, xml) {
 
-        // var url = 'http://localhost/bp/index.php';
-        var url = 'http://bp.vcu.ir/index.php';
+        var url = 'http://localhost/bp/index.php';
+        // var url = 'http://bp.vcu.ir/index.php';
 
         if (err) {
             return console.error('could not save BPMN 2.0 diagram', err);
