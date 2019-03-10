@@ -32,8 +32,8 @@ var modeler = new Modeler({
 //       ]
 // });
 
-var urlDiagram = 'http://localhost/bp/get.php';
-// var urlDiagram = 'http://bp.vcu.ir/get.php';
+// var urlDiagram = 'http://localhost/bp/get.php';
+var urlDiagram = 'http://bp.vcu.ir/get.php';
 
 function getDiagram() {
     // $.ajax(url, { dataType : 'text' }).done(function(xml) {
@@ -120,8 +120,8 @@ $("#done").click(function (event) {
 $("#saveBtn").click(function () {
     modeler.saveXML({ format: true }, function(err, xml) {
 
-        var url = 'http://localhost/bp/index.php';
-        // var url = 'http://bp.vcu.ir/index.php';
+        // var url = 'http://localhost/bp/index.php';
+        var url = 'http://bp.vcu.ir/index.php';
 
         if (err) {
             return console.error('could not save BPMN 2.0 diagram', err);
