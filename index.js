@@ -1,3 +1,4 @@
+
 import Modeler from 'bpmn-js/lib/Modeler';
 import propertiesPanelModule from 'bpmn-js-properties-panel';
 import propertiesProviderModule from 'bpmn-js-properties-panel/lib/provider/bpmn';
@@ -50,10 +51,10 @@ var modeler = new Modeler({
     propertiesPanel: {
         parent: '#js-properties-panel'
     },
-      additionalModules: [
+    additionalModules: [
         propertiesPanelModule,
         propertiesProviderModule
-      ]
+    ]
 });
 
 // var modeler2 = new Modeler({
@@ -70,35 +71,35 @@ var modeler = new Modeler({
 // var urlDiagram = 'http://localhost/bp/get.php';
 // var urlDiagram = 'http://bp.vcu.ir/get.php';
 
- function openDiagram(bpmnXML) {
+function openDiagram(bpmnXML) {
 
-   // import diagram
-   modeler.importXML(bpmnXML, function(err) {
+    // import diagram
+    modeler.importXML(bpmnXML, function(err) {
 
-     if (err) {
-       return console.error('could not import BPMN 2.0 diagram', err);
-     }
+        if (err) {
+            return console.error('could not import BPMN 2.0 diagram', err);
+        }
 
-     // access modeler components
-     var canvas = modeler.get('canvas');
-     // var overlays = modeler.get('overlays');
+        // access modeler components
+        var canvas = modeler.get('canvas');
+        // var overlays = modeler.get('overlays');
 
-     // zoom to fit full viewport
-     canvas.zoom('fit-viewport');
+        // zoom to fit full viewport
+        canvas.zoom('fit-viewport');
 
-     // attach an overlay to a node
-     // overlays.add('SCAN_OK', 'note', {
-     //   position: {
-     //     bottom: 0,
-     //     right: 0
-     //   },
-     //   html: '<div class="diagram-note">Mixed up the labels?</div>'
-     // });
+        // attach an overlay to a node
+        // overlays.add('SCAN_OK', 'note', {
+        //   position: {
+        //     bottom: 0,
+        //     right: 0
+        //   },
+        //   html: '<div class="diagram-note">Mixed up the labels?</div>'
+        // });
 
-     // add marker
-     // canvas.addMarker('SCAN_OK', 'needs-discussion');
-   });
- }
+        // add marker
+        // canvas.addMarker('SCAN_OK', 'needs-discussion');
+    });
+}
 
 // function openDiagram2(bpmnXML) {
 //
