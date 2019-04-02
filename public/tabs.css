@@ -6,7 +6,6 @@
 	 cursor: pointer;
 	 font-size: 16px;
 	 padding: 3px 4px 3px 4px;
-	 color: ;
 }
  .bpp-properties-tab-bar .scroll-tabs-button:hover {
 	 font-weight: bold;
@@ -39,10 +38,13 @@
 	 border: 1px solid ;
 	 border-radius: 3px 3px 0 0;
 	 border-bottom: transparent;
-	 background-color: ;
-	 color: ;
 	 text-decoration: none;
 }
+
+.bpp-properties-tabs-links-selected > a {
+	font-size: 16px !important;
+}
+
  ul.bpp-properties-tabs-links > li > a:hover {
 	 color: #c0c0c0;
 }
@@ -54,7 +56,7 @@
 	 border-top: 2px solid ;
 	 border-bottom: none;
 }
- .bpp-properties-tab, .bpp-properties-tab.bpp-hidden {
+.bpp-properties-tab.bpp-hidden {
 	 display: none;
 }
  .bpp-properties-tab.bpp-active {

@@ -144,13 +144,6 @@
 
     </style>
 
-    <script>
-
-        var selectedElementMine = null;
-        var selectedId;
-
-    </script>
-
 </head>
 
 <body style="font-family: IRANSans !important;">
@@ -204,7 +197,7 @@
     <div class="popup" id="selectPopup">
 
         <div style="min-width: 200px; margin: 20px auto; width: 100%; text-align: center; direction: rtl">
-            <select onchange='selectItem(this.value, this.options[this.selectedIndex].text)' style="text-align: right; direction: rtl" class="js-example-basic-single" id="select"></select>
+            <select onchange='selectItem()' style="text-align: right; direction: rtl" class="js-example-basic-single" id="select"></select>
         </div>
 
         <div id="items" class="row" style="padding: 20px; margin-top: 20px; height: 50px"></div>
@@ -220,118 +213,199 @@
     <script>
 
         var selectedItems = [];
-        var selectedItemsName = [];
+        var options = [];
+        var mainSelectedId = -1;
 
-        function eventFire(el, etype){
-            if (el.fireEvent) {
-                el.fireEvent('on' + etype);
-            } else {
-                var evObj = document.createEvent('Events');
-                evObj.initEvent(etype, true, false);
-                el.dispatchEvent(evObj);
-            }
-        }
+        function changeTab(tabId) {
 
-        function showPopupSelect() {
-
-            $.ajax({
-                type: 'post',
-                url: 'http://bp.vcu.ir/getOptions.php',
-                data: {
-                    'kind': selectedId
-                },
-                success: function (response) {
-
-                    selectedItems = [];
-                    selectedItemsName = [];
-                    $(".selectedItemClass").remove();
-
-                    response = JSON.parse(response);
-
-                    var newElement = "<option value='-1'>مسئول مورد نظر خود را انتخاب نمایید</option>";
-
-                    for(var i = 0; i < response.length; i++) {
-                        newElement += "<option value='" + response[i].value + "'>" + response[i].name + "</option>";
-                    }
-
-                    $(".dark").removeClass('hidden');
-                    $("#select").empty().append(newElement);
-                    $("#selectPopup").css('display', 'block');
-                    $('.js-example-basic-single').select2();
-
-                    console.log(selectedElementMine, null, 4);
-                }
+            $(".bpp-properties-group").each(function () {
+                if($(this).attr('data-tab-id') == tabId)
+                    $(this).removeClass('hidden');
+                else
+                    $(this).addClass('hidden');
             });
         }
 
-        function selectItem(val, name) {
+        function fetchData(id, vals) {
 
-            if(val == -1)
+            var idx = -1;
+
+            for(var t = 0; t < selectedItems.length; t++) {
+                if(selectedItems[t].elem == id) {
+                    idx = t;
+                    break;
+                }
+            }
+
+            if(idx == -1)
                 return;
+
+            var counter = 0;
+            var items = [];
+
+            for(i = 0; i < options.length; i++) {
+
+                if(options[i].id == id) {
+
+                    for(var j = 0; j < vals.length; j++) {
+                        for(var k = 0; k < options[i].items.length; k++) {
+                            if(options[i].items[k].id == vals[j]) {
+                                items[counter++] = options[i].items[k];
+                                break;
+                            }
+                        }
+                    }
+
+                    selectedItems[idx].items = items;
+                    showAllDoneItems(idx);
+                    return;
+                }
+            }
+
+//            var url = 'http://bp.vcu.ir/getOptions.php';
+            var url = 'http://localhost/bp/getOptions.php';
+
+            $.ajax({
+                type: 'post',
+                url: url,
+                data: {
+                    'kind': id
+                },
+                success: function (response) {
+
+                    response = JSON.parse(response);
+                    items = [];
+
+                    for(var i = 0; i < response.length; i++) {
+                        items[i] = {"name": response[i].name, 'id': response[i].value};
+                    }
+
+                    var size = options.length;
+                    options[size] = {'id': id, 'items': items};
+
+                    var counter = 0;
+                    var items = [];
+
+                    for (var j = 0; j < vals.length; j++) {
+                        for (var k = 0; k < options[size].items.length; k++) {
+                            if (options[size].items[k].id == vals[j]) {
+                                items[counter++] = options[size].items[k];
+                                break;
+                            }
+                        }
+                    }
+
+                    selectedItems[idx].items = items;
+                    showAllDoneItems(idx);
+                }
+            });
+
+        }
+
+        function showPopupSelect(id) {
+
+            mainSelectedId = id;
+            $(".selectedItemClass").remove();
+
+            var newElement = "<option value='-1'>مسئول مورد نظر خود را انتخاب نمایید</option>";
+
+            for(var i = 0; i < items.length; i++) {
+                newElement += "<option value='" + items[i].id + "'>" + items[i].name + "</option>";
+            }
+
+
+            var selectedItemsElement = "";
+
+            for(i = 0; i < selectedItems.length; i++) {
+                selectedItemsElement += "<div class='selectedItemClass btn btn-primary col-xs-3' id='item_" + i + "' style='color: white; float:right; margin: 10px; text-align: center; width: fit-content; border: 1px solid black; border-radius: 6px; padding: 7px;'><span>" + selectedItems[i].name + "</span>";
+                selectedItemsElement += "<span class='glyphicon glyphicon-remove' onclick='deleteItem(" + i + ")'></span>";
+                selectedItemsElement += "</div>";
+            }
+
+            $("#items").empty().append(selectedItemsElement);
+            $(".dark").removeClass('hidden');
+            $("#select").empty().append(newElement);
+            $("#selectPopup").css('display', 'block');
+            $('.js-example-basic-single').select2();
+        }
+
+        function selectItem() {
+
+            var newVal = $("#select").val();
+
+            if(newVal == -1)
+                return;
+
+            var currIdx = -1;
 
             var allow = true, size = selectedItems.length;
 
             for(i = 0; i < size; i++) {
-                if(selectedItems[i] == val) {
+                if(selectedItems[i].id == newVal) {
+                    currIdx = i;
                     allow = false;
                     break;
                 }
             }
 
             if(allow) {
-                selectedItems[size] = val;
-                selectedItemsName[size] = name;
-                var newElement = "<div class='selectedItemClass btn btn-primary col-xs-3' id='item_" + size + "' style='color: white; float:right; margin: 10px; text-align: center; width: fit-content; border: 1px solid black; border-radius: 6px; padding: 7px;'><span>" + name + "</span>";
-                newElement += "<span class='glyphicon glyphicon-remove' onclick='deleteItem(" + size + ")'></span>";
-                newElement += "</div>";
-                $("#items").append(newElement);
+
+                for(i = 0; i < items.length; i++) {
+                    if(items[i].id == newVal) {
+                        selectedItems[size] = items[i];
+                        currIdx = size;
+                        break;
+                    }
+                }
+
+                if(currIdx != -1) {
+                    var newElement = "<div class='selectedItemClass btn btn-primary col-xs-3' id='item_" + size + "' style='color: white; float:right; margin: 10px; text-align: center; width: fit-content; border: 1px solid black; border-radius: 6px; padding: 7px;'><span>" + selectedItems[currIdx].name + "</span>";
+                    newElement += "<span class='glyphicon glyphicon-remove' onclick='deleteItem(" + size + ")'></span>";
+                    newElement += "</div>";
+                    $("#items").append(newElement);
+                }
             }
 
         }
 
-        function showAllDoneItems() {
+        function showAllDoneItems(idx) {
 
-            var newElement = "", size = selectedItems.length;
+            var newElement = "";
 
-            for(i = 0; i < selectedItems.length; i++) {
-                newElement += "<div class='btn btn-primary col-xs-6' id='item_" + size + "' style='color: white; float:right; margin: 10px; text-align: center; width: fit-content; border: 1px solid black; border-radius: 6px; padding: 7px;'><span>" + selectedItemsName[i] + "</span>";
-                newElement += "<span class='glyphicon glyphicon-remove' onclick='deleteItem(" + size + ")'></span>";
+            for(i = 0; i < selectedItems[idx].items.length; i++) {
+                newElement += "<div class='btn btn-primary col-xs-6' id='item_" + i + "' style='color: white; float:right; margin: 10px; text-align: center; width: fit-content; border: 1px solid black; border-radius: 6px; padding: 7px;'><span>" + selectedItems[idx].items[i].name + "</span>";
+                newElement += "<span class='glyphicon glyphicon-remove' onclick='deleteItem(" + i + ")'></span>";
                 newElement += "</div>";
             }
 
-            $("#" + selectedId).empty().append(newElement);
+            $("#" + selectedItems[idx].elem).empty().append(newElement);
 
         }
 
         function done() {
 
-            var text = "", size = selectedItems.length;
-
-            for(i = 0; i < size; i++) {
-                text += selectedItemsName[i] + " - ";
-            }
-
-            showAllDoneItems();
-
             $(".dark").addClass('hidden');
             $("#selectPopup").css('display', 'none');
-//            $("#camunda-process-is-Responsible").empty().append(text).focus();
 
-//            var element;
-//
-//            $('.djs-element').filter(function( index ) {
-//                if($(this).hasClass('selected')) {
-//                    element = $(this);
-//                    return;
-//                }
-//            });
+            var text = "";
+            var first = true;
 
-//            eventFire(document.getElementById('camunda-process-is-Responsible'), 'click');
+            for (i = 0; i < selectedItems.length; i++) {
+                if(first) {
+                    first = false;
+                    text += selectedItems[i].id;
+                }
+                else {
+                    text += "-" + selectedItems[i].id;
+                }
+            }
+
+            $("#" + mainSelectedId).val(text).change().focusout();
+            showAllDoneItems();
         }
 
         function deleteItem(i) {
             selectedItems.splice(i, 1);
-            selectedItemsName.splice(i, 1);
             $("#item_" + i).remove();
         }
     </script>
