@@ -7,6 +7,7 @@ var artaraxTreeView;
 var conditions = [];
 var showCondition;
 var placeHolder;
+var selectedJustOptions = [];
 
 function changeNewRoleStatus() {
     if($("#newRole").prop('checked')) {
@@ -16,6 +17,17 @@ function changeNewRoleStatus() {
     else {
         $("#newRoleText").addClass('hidden');
         $("#role_div").removeClass('hidden');
+    }
+}
+
+function changeNewConditionStatus() {
+    if($("#newCondition").prop('checked')) {
+        $("#newConditionDiv").removeClass('hidden');
+        $("#condition_div").addClass('hidden');
+    }
+    else {
+        $("#newConditionDiv").addClass('hidden');
+        $("#condition_div").removeClass('hidden');
     }
 }
 
@@ -42,7 +54,7 @@ function parseNodes(vals, roleVals) {
     $(".selectedItemClass").remove();
 
     if(showCondition) {
-        var newElement = "<option value='-1'>" + placeHolder +" مورد نظر</option>";
+        var newElement = "<option value='-1'> شرط مورد نظر</option>";
 
         for (i = 0; i < options.length; i++) {
             if (options[i].id == 'itemBoxes_' + mainSelectedId) {
@@ -141,7 +153,7 @@ function selectDefault(idx) {
 
 function selectNewCondition(val, text) {
 
-    if(val == -1)
+    if(val == -1 || val.length == 0)
         return;
 
     var size = conditions.length;
@@ -329,25 +341,135 @@ function getItemAndRole(itemId, roleIds, defaultVal) {
         selectedNodes[selectedNodes.length] = {"roles": {'ids': ids, 'names': names, 'custom': custom}, "items": selectedItems, "default": defaultVal};
 }
 
-function showPopupSelect(pH, id) {
+function showPopupSelect(pH, id, label) {
+
     mainSelectedId = id;
     selectedNodes = [];
     showCondition = true;
-    $(".headerOfPopup").empty().append(pH);
     placeHolder = pH;
+
+    $("#type1").removeClass('hidden');
+    $("#type2").addClass('hidden');
+
+    //initializing
+    $("#newRole").prop('checked', false);
+    $("#newCondition").prop('checked', false);
+    changeNewRoleStatus();
+    changeNewConditionStatus();
+    $("#search").val("");
+    $("#newRoleText").val("");
+    $("#newConditionText").val("");
+
+    //labeling
+    $(".headerOfPopup").empty().append(label);
     $("#condition_text").empty().append(pH);
     $("#not_found_condition_text").empty().append(pH);
     $("#table_condition_text").empty().append(pH);
-    $("#condition_div").removeClass('hidden');
+
+    fetchData("itemBoxes_" + mainSelectedId);
+
     getNodes($("#" + id).attr('data-val').split('$$'), $("#role_" + id).attr('data-val').split('$$'), id);
 }
 
-function showPopupSelect2(id) {
+function showPopupSelect2(id, label, mode) {
+
     mainSelectedId = id;
     selectedNodes = [];
     showCondition = false;
-    $("#condition_div").addClass('hidden');
-    getNodes([], $("#" + id).attr('data-val').split('$$'), id);
+
+    $(".headerOfPopup").empty().append(label);
+    $("#type1").addClass('hidden');
+    $("#type2").removeClass('hidden');
+    $("#conditionResultsInType2").empty();
+
+    getJustOptions($("#" + id).attr('data-val').split('$$'), id, mode);
+}
+
+function getJustOptions(selected, id, mode) {
+
+    $.ajax({
+        type: 'post',
+        url: 'http://localhost/bp/getOptions.php',
+        data: {
+            'kind': id
+        },
+        success: function (response) {
+            response = JSON.parse(response);
+
+            var newElement = "<option value='-1'>آیتم مورد نظر</option>";
+
+            var tmpSelected = $("#" + mainSelectedId).attr('data-val').slice('$$');
+
+            for(var i = 0; i < response.length; i++) {
+
+                for(var j = 0; j < tmpSelected.length; j++) {
+                    if (tmpSelected[j] == response[i].id) {
+                        selectedJustOptions[selectedJustOptions.length] = {
+                            "id": response[i].id,
+                            "text": response[i].name
+                        };
+                        break;
+                    }
+                }
+
+                newElement += "<option value='" + response[i].id + "'>" + response[i].name + "</option>";
+            }
+
+            $("#selectInType2").empty().append(newElement).on('change', function () {
+                selectNewJustOption($(this).val(), $(this).find('option:selected').text(), mode);
+            });
+
+            renderJustOptions(mode);
+            $(".dark").removeClass('hidden');
+            $("#selectPopup").css('display', 'block');
+            $('.js-example-basic-single').select2();
+        }
+    });
+}
+
+function selectNewJustOption(id, text, mode) {
+
+    if(id == -1)
+        return;
+
+    if(mode == 'single') {
+        selectedJustOptions[0] = {"id": id, "text": text};
+        return;
+    }
+    else {
+        for(var i = 0; i < selectedJustOptions.length; i++) {
+            if(selectedJustOptions[i].id == id)
+                return;
+        }
+        selectedJustOptions[selectedJustOptions.length] = {"id": id, "text": text};
+    }
+
+    renderJustOptions(mode);
+}
+
+function renderJustOptions(mode) {
+
+    if(mode == "single") {
+        if(selectedJustOptions.length > 0) {
+            $("#selectInType2").val(selectedJustOptions[0].id);
+        }
+    }
+
+    else {
+        var newElement = "";
+
+        for (var i = 0; i < selectedJustOptions.length; i++) {
+            newElement += "<div id='condition_" + i + "' style='padding: 10px' class='col-xs-4'><p onclick='deleteConditionJustOptions(" + i + ")' style='padding: 5px; width: fit-content' class='btn btn-primary'><span>" + selectedJustOptions[i].text + "</span><span class='glyphicon glyphicon-remove'></span></p></div>";
+        }
+
+        $("#conditionResultsInType2").empty().append(newElement);
+    }
+}
+
+function deleteConditionJustOptions(idx) {
+    selectedJustOptions.splice(idx, 1);
+    $("#condition_" + idx).remove();
+    renderJustOptions();
 }
 
 function submit() {
@@ -360,7 +482,12 @@ function submit() {
         selectedRoles = {'ids': selectedRolesId, 'names': selectedRolesName, 'custom': false};
     }
     else {
-        selectedRoles = {'ids': [-1], 'names': [$("#newRoleText").val()], 'custom': true};
+        var tmpRole = $("#newRoleText").val();
+
+        if(tmpRole.length == 0)
+            return;
+
+        selectedRoles = {'ids': [-1], 'names': [tmpRole], 'custom': true};
     }
 
     var selectedItems = [];
@@ -426,20 +553,19 @@ function done() {
     var defaultVal = "";
     var defaultVal2 = "";
 
-    for (var i = 0; i < selectedNodes.length; i++) {
+    if(showCondition) {
+        for (var i = 0; i < selectedNodes.length; i++) {
 
-        if(showCondition) {
-
-            if(selectedNodes[i].default) {
+            if (selectedNodes[i].default) {
                 for (j = 0; j < selectedNodes[i].items.length - 1; j++) {
-                    if(selectedNodes[i].items[j].id != -1)
+                    if (selectedNodes[i].items[j].id != -1)
                         defaultVal += selectedNodes[i].items[j].id + "&&";
                     else
                         defaultVal += "0" + selectedNodes[i].items[j].name + "&&";
                 }
 
                 if (selectedNodes[i].items.length > 0) {
-                    if(selectedNodes[i].items[selectedNodes[i].items.length - 1].id != -1)
+                    if (selectedNodes[i].items[selectedNodes[i].items.length - 1].id != -1)
                         defaultVal += selectedNodes[i].items[selectedNodes[i].items.length - 1].id;
                     else
                         defaultVal += "0" + selectedNodes[i].items[selectedNodes[i].items.length - 1].name;
@@ -447,14 +573,14 @@ function done() {
 
 
                 for (j = 0; j < selectedNodes[i].roles.ids.length - 1; j++) {
-                    if(!selectedNodes[i].roles.custom)
+                    if (!selectedNodes[i].roles.custom)
                         defaultVal2 += selectedNodes[i].roles.ids[j] + "&&";
                     else
                         defaultVal2 += "0" + selectedNodes[i].roles.names[j] + "&&";
                 }
 
-                if(selectedNodes[i].roles.ids.length > 0) {
-                    if(!selectedNodes[i].roles.custom)
+                if (selectedNodes[i].roles.ids.length > 0) {
+                    if (!selectedNodes[i].roles.custom)
                         defaultVal2 += selectedNodes[i].roles.ids[selectedNodes[i].roles.ids.length - 1];
                     else
                         defaultVal2 += "0" + selectedNodes[i].roles.names[selectedNodes[i].roles.names.length - 1];
@@ -467,14 +593,14 @@ function done() {
                 text2 += "$$";
 
                 for (j = 0; j < selectedNodes[i].items.length - 1; j++) {
-                    if(selectedNodes[i].items[j].id != -1)
+                    if (selectedNodes[i].items[j].id != -1)
                         text += selectedNodes[i].items[j].id + "&&";
                     else
                         text += "0" + selectedNodes[i].items[j].name + "&&";
                 }
 
                 if (selectedNodes[i].items.length > 0) {
-                    if(selectedNodes[i].items[selectedNodes[i].items.length - 1].id != -1)
+                    if (selectedNodes[i].items[selectedNodes[i].items.length - 1].id != -1)
                         text += selectedNodes[i].items[selectedNodes[i].items.length - 1].id;
                     else
                         text += "0" + selectedNodes[i].items[selectedNodes[i].items.length - 1].name;
@@ -482,29 +608,35 @@ function done() {
 
 
                 for (j = 0; j < selectedNodes[i].roles.ids.length - 1; j++) {
-                    if(!selectedNodes[i].roles.custom)
+                    if (!selectedNodes[i].roles.custom)
                         text2 += selectedNodes[i].roles.ids[j] + "&&";
                     else
                         text2 += "0" + selectedNodes[i].roles.names[j] + "&&";
                 }
 
-                if(selectedNodes[i].roles.ids.length > 0) {
-                    if(!selectedNodes[i].roles.custom)
+                if (selectedNodes[i].roles.ids.length > 0) {
+                    if (!selectedNodes[i].roles.custom)
                         text2 += selectedNodes[i].roles.ids[selectedNodes[i].roles.ids.length - 1];
                     else
                         text2 += "0" + selectedNodes[i].roles.names[selectedNodes[i].roles.names.length - 1];
                 }
             }
         }
-    }
 
-    if(showCondition) {
         text2 = defaultVal2 + text2;
         text = defaultVal + text;
         $("#role_" + mainSelectedId).val(text2);
         $("#" + mainSelectedId).val(text).change().focusout();
     }
+
     else {
+
+        for(j = 0; j < selectedJustOptions.length - 1; j++)
+            text2 += selectedJustOptions[j].id + "$$";
+
+        if(selectedJustOptions.length > 0)
+            text2 += selectedJustOptions[selectedJustOptions.length - 1].id;
+
         $("#" + mainSelectedId).val(text2).change().focusout();
     }
 }

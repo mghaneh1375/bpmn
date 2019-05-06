@@ -35,6 +35,9 @@ function addNewTag() {
 
     var val = $("#tagTemp").val();
 
+    if(val.length == 0)
+        return;
+
     for(var i = 0; i < tags.length; i++) {
         if(tags[i] == val)
             return;

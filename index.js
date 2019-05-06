@@ -77,8 +77,6 @@ function updatePanelInfo(elem) {
 
     for (var i = 0; i < inputs.length; i++) {
         $("#" + inputs[i]).change(onAnyTextBoxChanged).focusout(onAnyTextBoxFocusLost);
-        if(inputs[i] != "role_Responsible2")
-            fetchData("itemBoxes_" + inputs[i]);
     }
 }
 
