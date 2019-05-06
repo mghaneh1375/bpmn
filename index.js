@@ -1,16 +1,10 @@
 import Modeler from 'bpmn-js/lib/Modeler';
 import CliModule from 'bpmn-js-cli';
-import ModelingDslModule from 'bpmn-js-cli-modeling-dsl';
-// import propertiesPanelModule from 'bpmn-js-properties-panel';
-// import propertiesProviderModule from 'bpmn-js-properties-panel/lib/provider/bpmn';
 // import EventBus from 'diagram-js/lib/core/EventBus';
 
 import * as PanelProperties from 'customPanel/PanelProperties';
 import * as draw from 'customPanel/draw';
 import * as Palette from 'customPanel/palette/MyPaletteProvider';
-
-// import diagramXML from './resources/diagram1.bpmn';
-// import diagramXML2 from './resources/diagram2.bpmn';
 
 // create a modeler
 var modeler = new Modeler({
@@ -18,13 +12,7 @@ var modeler = new Modeler({
     keyboard: {
         bindTo: window
     },
-    // propertiesPanel: {
-    //     parent: '#js-properties-panel'
-    // },
     additionalModules: [
-        // propertiesPanelModule,
-        // propertiesProviderModule,
-        // ModelingDslModule,
         CliModule
     ],
     cli: {
@@ -32,58 +20,65 @@ var modeler = new Modeler({
     }
 });
 
-// var modeler2 = new Modeler({
-//     container: '#canvas2',
-//     propertiesPanel: {
-//         parent: '#js-properties-panel2'
-//     },
-//       additionalModules: [
-//         propertiesPanelModule,
-//         propertiesProviderModule
-//       ]
-// });
-
 var eventBus = modeler.get('eventBus');
 var modeling = modeler.get('modeling');
+var currElem;
 
-eventBus.on('element.click',function(event)
-{
+eventBus.on('element.click',function(event) {
     var elem = event.element;
+    currElem = elem.id;
     updatePanelInfo(elem);
 });
 
-eventBus.on('import.done',function(event)
-{
-    // var tmpURL = 'http://localhost/bp/get.php';
-    var tmpURL = 'http://bp.vcu.ir/get.php';
-
-    $.ajax({
-        type: 'post',
-        url: tmpURL,
-        data: {
-            'getJSON': 'true'
-        },
-        success: function (xml) {
-            Palette.parser(xml, modeling);
-        }
-    });
+// eventBus.on('import.done',function(event)
+// {
+//     var tmpURL = 'http://localhost/bp/get.php';
+//     // var tmpURL = 'http://bp.vcu.ir/get.php';
+//
+//     $.ajax({
+//         type: 'post',
+//         url: tmpURL,
+//         data: {
+//             'getJSON': 'true'
+//         },
+//         success: function (xml) {
+//             Palette.parser(xml, modeling);
+//         }
+//     });
 
     // Palette.test();
     //console.log("Imported Completed");
     //exportDiagram();
-});
+// });
 
 var selectedElement;
 var inputs = [];
-function updatePanelInfo(elem) {
-    selectedElement = elem;
 
+function updatePanelInfo(elem) {
+    
+    selectedElement = elem;
     inputs = draw.drawPanel(PanelProperties.getTabs(elem));
+
+    var tagsVal = $("#tag").val();
+
+    if(tagsVal.length > 0) {
+        tags = tagsVal.split('$$');
+        currIdxTag = 0;
+        renderTags();
+    }
+    else {
+        tags = [];
+        currIdxTag = 0;
+    }
+
+    $("#tag").change(updateTags).focusout(updateTags);
+
+    $(".defaultInput").change(onAnyTextBoxChanged).focusout(onAnyTextBoxFocusLost);
 
     for (var i = 0; i < inputs.length; i++) {
         $("#" + inputs[i]).change(onAnyTextBoxChanged).focusout(onAnyTextBoxFocusLost);
-        selectedItems[selectedItems.length] = {'elem': "itemBoxes_" + inputs[i], 'items': []};
-        fetchData("itemBoxes_" + inputs[i], $("#" + inputs[i]).attr('data-val').split('-'));
+        if(inputs[i] != "role_Responsible2")
+            fetchData("itemBoxes_" + inputs[i]);
     }
 }
 
@@ -91,6 +86,14 @@ var isDiagramDirty = false;
 
 function onAnyTextBoxChanged() {
     isDiagramDirty = true;
+}
+
+function updateTags() {
+
+    var properties = {};
+    properties["tag"] = $("#tag").val();
+
+    modeling.updateProperties(selectedElement, properties);
 }
 
 function onAnyTextBoxFocusLost()  {
@@ -101,7 +104,12 @@ function onAnyTextBoxFocusLost()  {
 
         for (var i = 0; i < inputs.length; i++) {
             properties[inputs[i]] = $("#" + inputs[i]).val();
+            properties["role_" + inputs[i]] = $("#role_" + inputs[i]).val();
         }
+
+        $(".defaultInput").each(function () {
+            properties[$(this).attr('name')] = $(this).val();
+        });
 
         modeling.updateProperties(selectedElement, properties);
         isDiagramDirty = false;
@@ -109,13 +117,10 @@ function onAnyTextBoxFocusLost()  {
 }
 
 
-// var urlDiagram = 'http://localhost/bp/get.php';
-var urlDiagram = 'http://bp.vcu.ir/get.php';
+var urlDiagram = 'http://localhost/bp/get.php';
+// var urlDiagram = 'http://bp.vcu.ir/get.php';
 
 function getDiagram() {
-    // $.ajax(url, { dataType : 'text' }).done(function(xml) {
-    //     openDiagram(xml);
-    // });
 
     $.ajax({
         type: 'post',
@@ -138,94 +143,24 @@ function openDiagram(bpmnXML) {
             return console.error('could not import BPMN 2.0 diagram', err);
         }
 
-        // access modeler components
         var canvas = modeler.get('canvas');
-        // var overlays = modeler.get('overlays');
-
-        // zoom to fit full viewport
         canvas.zoom('fit-viewport');
-
-        // attach an overlay to a node
-        // overlays.add('SCAN_OK', 'note', {
-        //   position: {
-        //     bottom: 0,
-        //     right: 0
-        //   },
-        //   html: '<div class="diagram-note">Mixed up the labels?</div>'
-        // });
-
-        // add marker
-        // canvas.addMarker('SCAN_OK', 'needs-discussion');
     });
 }
 
-// function openDiagram2(bpmnXML) {
-//
-//     modeler2.importXML(bpmnXML, function(err) {
-//
-//       if (err) {
-//         return console.error('could not import BPMN 2.0 diagram', err);
-//       }
-//
-//       // access modeler components
-//       var canvas2 = modeler2.get('canvas');
-//       canvas2.zoom('fit-viewport');
-//       canvas2.addMarker('SCAN_OK', 'needs-discussion');
-//     });
-// }
-
 getDiagram();
 
-// var eventBus = new EventBus();
-//
-$("#done").click(function (event) {
-
-    // cli.setLabel(callActivity, 'salam');
-
-    // modeler.saveXML({ format: true }, function(err, xml) {
-    //
-    //     // var url = 'http://localhost/bp/index.php';
-    //     var url = 'http://bp.vcu.ir/index.php';
-    //
-    //     if (err) {
-    //         return console.error('could not save BPMN 2.0 diagram', err);
-    //     }
-    //
-    //     $.ajax({
-    //         type: 'post',
-    //         url: url,
-    //         data: {
-    //             'xml': xml
-    //         },
-    //         success: function (response) {
-    //             // alert('Diagram exported. Check the developer tools!');
-    //             alert(response);
-    //         }
-    //     });
-    //
-    //     console.log('DIAGRAM', xml);
-    // });
-//
-//     event = {
-//         "element": selectedElementMine,
-//         "gfx": {},
-//         "originalEvent": {
-//             "isTrusted": true,
-//             "delegateTarget": {}
-//         },
-//         "type": "element.click"
-//     };
-//
-//     console.log(JSON.stringify(event, null, 4));
-//     eventBus.fire('shape.changed', event);
-//     eventBus.fire('element.changed', event);
+$("#upl").click(function () {
+    var cli = window.cli;
+    $("#diagram_id").val(cli.elements()[0]);
+    $("#elem_id").val(currElem);
 });
 
 $("#saveBtn").click(function () {
     modeler.saveXML({ format: true }, function(err, xml) {
 
-        // var url = 'http://localhost/bp/index.php';
-        var url = 'http://bp.vcu.ir/index.php';
+        var url = 'http://localhost/bp/index.php';
+        // var url = 'http://bp.vcu.ir/index.php';
 
         if (err) {
             return console.error('could not save BPMN 2.0 diagram', err);
@@ -238,11 +173,94 @@ $("#saveBtn").click(function () {
                 'xml': xml
             },
             success: function (response) {
-                // alert('Diagram exported. Check the developer tools!');
-                alert(response);
+                window.location.reload();
             }
         });
 
         console.log('DIAGRAM', xml);
+    });
+});
+
+$("#saveBtnFake").click(function () {
+    modeler.saveXML({ format: true }, function(err, xml) {
+
+        var url = 'http://localhost/bp/index.php';
+        // var url = 'http://bp.vcu.ir/index.php';
+
+        if (err) {
+            return console.error('could not save BPMN 2.0 diagram', err);
+        }
+
+        $.ajax({
+            type: 'post',
+            url: url,
+            data: {
+                'xml': xml
+            }
+        });
+
+        console.log('DIAGRAM', xml);
+    });
+});
+
+$("#printBtn").click(function () {
+
+    modeler.saveSVG(function (err, svg) {
+        if (err) {
+            console.error(err);
+        }
+        else {
+
+            var file = new Blob([svg], {type: "svg"});
+            if (window.navigator.msSaveOrOpenBlob) // IE10+
+                window.navigator.msSaveOrOpenBlob(file, "output.svg");
+            else { // Others
+                var a = document.createElement("a"),
+                    url = URL.createObjectURL(file);
+                a.href = url;
+                a.download = "output.svg";
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(function() {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 0);
+            }
+
+            // $("#myCanvasPrint").empty().append(svg);
+            // var cnv = document.getElementById("myCanvasPrint");
+            // var img = cnv.toDataURL();
+            // saveSvgAsPng(document.getElementById("myCanvasPrint"), "diagram.png");
+            // var img = $("#myCanvasPrint").empty().append(svg).toDataURL("image/png");
+            // var img = cnv.toDataURL("image/png");
+            // document.write('<img src="'+img+'"/>');
+        }
+    });
+});
+
+$("#outputBtn").click(function () {
+
+    modeler.saveXML(function (err, xml) {
+        if (err) {
+            console.error(err);
+        }
+        else {
+
+            var file = new Blob([xml], {type: "xml"});
+            if (window.navigator.msSaveOrOpenBlob) // IE10+
+                window.navigator.msSaveOrOpenBlob(file, "output.bpmn");
+            else { // Others
+                var a = document.createElement("a"),
+                    url = URL.createObjectURL(file);
+                a.href = url;
+                a.download = "output.bpmn";
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(function() {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);
+                }, 0);
+            }
+        }
     });
 });

@@ -30,6 +30,7 @@
  ul.bpp-properties-tabs-links > li {
 	 display: inline-block;
 	 margin: 0;
+	 cursor: pointer;
 }
  ul.bpp-properties-tabs-links > li > a {
 	 display: inline-block;
@@ -62,4 +63,8 @@
  .bpp-properties-tab.bpp-active {
 	 display: block;
 }
- 
+
+.bpp-properties-tab {
+	max-height: 80vh;
+	overflow: auto;
+}

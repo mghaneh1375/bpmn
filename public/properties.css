@@ -202,4 +202,7 @@
  .bpp-field-description a:hover {
 	 color: ;
 }
- 
+
+ .bpp-properties-entry > label {
+	 min-width: 100px;
+ }

@@ -29,4 +29,9 @@
  .bpp-properties-header > .search button:before {
 	 content: '\E805';
 }
- 
+
+.group-label {
+	display: block;
+	direction: rtl;
+	text-align: center;
+}
