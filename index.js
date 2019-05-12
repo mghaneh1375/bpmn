@@ -1,4 +1,5 @@
 import Modeler from 'bpmn-js/lib/Modeler';
+import CliModule from 'bpmn-js-cli';
 import EventBus from 'diagram-js/lib/core/EventBus';
 import * as PanelProperties from 'customPanel/PanelProperties';
 import * as draw from 'customPanel/draw';
