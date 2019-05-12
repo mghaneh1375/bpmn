@@ -225,6 +225,18 @@
         </div>
     </div>
 
+    <div class="popup" id="editLabelPopup" style="top: 50% !important; width: 25% !important;; height: auto !important; direction: rtl">
+
+        <center class="col-xs-12 bodyOfPopUp">
+
+            <input type="text" style="color: black; display: block; margin: 10px" id="newLabel">
+
+            <button style="margin: 10px" class="btn btn-success" onclick="submitNewLabel()">تایید</button>
+            <button style="margin: 10px" class="btn btn-danger" onclick="closeEditPane()">بستن</button>
+
+        </center>
+    </div>
+
     <div class="popup" id="selectPopup">
 
         <div class="headerOfPopup"></div>
@@ -337,7 +349,7 @@
     <canvas width="800" height="1000" class="hidden" id="myCanvasPrint"></canvas>
 
     <!--class="hidden"-->
-    <form method="post" enctype="multipart/form-data" action="http://localhost/bp/upload.php" id="upload" class="popup" style="top: 0 !important; height: auto !important;">
+    <form method="post" enctype="multipart/form-data" action="https://ppl.ut.ac.ir/demo/editor/basedata/upload.php" id="upload" class="popup" style="top: 0 !important; height: auto !important;">
         <div id="drop" style="font-family: IRANSans !important;">
             فایل را اینجا رها کن
 
@@ -359,11 +371,13 @@
     <script src="./treeViewExtension.js"></script>
     <script src="./app.bundled.js"></script>
     <script src="./props.js"></script>
+    <script src="./editLabel.js"></script>
     <script src="./fileUploader/js/jquery.knob.js"></script>
     <script src="./fileUploader/js/jquery.ui.widget.js"></script>
     <script src="./fileUploader/js/jquery.iframe-transport.js"></script>
     <script src="./fileUploader/js/jquery.fileupload.js"></script>
     <script src="./fileUploader/js/script.js"></script>
+
 
     <script>
 
@@ -373,7 +387,7 @@
 
             $.ajax({
                 type: 'post',
-                url: 'http://localhost/bp/removeFile.php',
+                url: 'https://ppl.ut.ac.ir/demo/editor/basedata/removeFile.php',
                 data: {
                     'file_id': file_id,
                     'diagram': diagram

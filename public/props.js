@@ -184,7 +184,7 @@ function getNodes(vals, roleVals, id) {
     roles = [];
 
     // var url = 'http://bp.vcu.ir/get.php';
-    var url = 'http://localhost/bp/get.php';
+    var url = 'https://ppl.ut.ac.ir/demo/editor/basedata/get.php';
 
     $.ajax({
         url: url,
@@ -221,7 +221,7 @@ function fetchData(id) {
     }
 
     // var url = 'http://bp.vcu.ir/getOptions.php';
-    var url = 'http://localhost/bp/getOptions.php';
+    var url = 'https://ppl.ut.ac.ir/demo/editor/basedata/getOptions.php';
 
     $.ajax({
         type: 'post',
@@ -389,7 +389,7 @@ function getJustOptions(selected, id, mode) {
 
     $.ajax({
         type: 'post',
-        url: 'http://localhost/bp/getOptions.php',
+        url: 'https://ppl.ut.ac.ir/demo/editor/basedata/getOptions.php',
         data: {
             'kind': id
         },

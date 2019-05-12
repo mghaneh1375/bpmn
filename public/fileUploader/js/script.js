@@ -69,7 +69,7 @@ $(function(){
             $("#Attach").val(response.total).change().focusout();
             $("#saveBtnFake").click();
 
-            var elem = "<div style='margin: 10px' id='file_" + response.id + "'><a target='_blank' href='http://localhost/bp/downloadFile.php?file_id=" + response.id + "' class='btn btn-default' download>دانلود فایل " + response.fileName  + "</a><p onclick='removeFile(" + response.id + ", \"" + window.cli.elements()[0] + "\")' class='btn btn-danger' style='padding: 9px; display: inline-block'><span class='glyphicon glyphicon-remove'></span></p></div>";
+            var elem = "<div style='margin: 10px' id='file_" + response.id + "'><a target='_blank' href='https://ppl.ut.ac.ir/demo/editor/basedata/downloadFile.php?file_id=" + response.id + "' class='btn btn-default' download>دانلود فایل " + response.fileName  + "</a><p onclick='removeFile(" + response.id + ", \"" + window.cli.elements()[0] + "\")' class='btn btn-danger' style='padding: 9px; display: inline-block'><span class='glyphicon glyphicon-remove'></span></p></div>";
 
             $("#uploaded_files").append(elem);
         },

@@ -20,16 +20,6 @@ var modeler = new Modeler({
     }
 });
 
-var eventBus = modeler.get('eventBus');
-var modeling = modeler.get('modeling');
-var currElem;
-
-eventBus.on('element.click',function(event) {
-    var elem = event.element;
-    currElem = elem.id;
-    updatePanelInfo(elem);
-});
-
 // eventBus.on('import.done',function(event)
 // {
 //     var tmpURL = 'http://localhost/bp/get.php';
@@ -50,6 +40,16 @@ eventBus.on('element.click',function(event) {
     //console.log("Imported Completed");
     //exportDiagram();
 // });
+
+var eventBus = modeler.get('eventBus');
+var modeling = modeler.get('modeling');
+var currElem;
+
+eventBus.on('element.click',function(event) {
+    var elem = event.element;
+    currElem = elem.id;
+    updatePanelInfo(elem);
+});
 
 var selectedElement;
 var inputs = [];
@@ -154,31 +154,6 @@ $("#upl").click(function () {
     $("#elem_id").val(currElem);
 });
 
-$("#saveBtn").click(function () {
-    modeler.saveXML({ format: true }, function(err, xml) {
-
-        var url = 'http://localhost/bp/index.php';
-        // var url = 'http://bp.vcu.ir/index.php';
-
-        if (err) {
-            return console.error('could not save BPMN 2.0 diagram', err);
-        }
-
-        $.ajax({
-            type: 'post',
-            url: url,
-            data: {
-                'xml': xml
-            },
-            success: function (response) {
-                window.location.reload();
-            }
-        });
-
-        console.log('DIAGRAM', xml);
-    });
-});
-
 $("#saveBtnFake").click(function () {
     modeler.saveXML({ format: true }, function(err, xml) {
 
@@ -260,5 +235,30 @@ $("#outputBtn").click(function () {
                 }, 0);
             }
         }
+    });
+});
+
+$("#saveBtn").click(function () {
+    modeler.saveXML({ format: true }, function(err, xml) {
+
+        var url = 'http://localhost/bp/index.php';
+        // var url = 'http://bp.vcu.ir/index.php';
+
+        if (err) {
+            return console.error('could not save BPMN 2.0 diagram', err);
+        }
+
+        $.ajax({
+            type: 'post',
+            url: url,
+            data: {
+                'xml': xml
+            },
+            success: function (response) {
+                window.location.reload();
+            }
+        });
+
+        console.log('DIAGRAM', xml);
     });
 });
