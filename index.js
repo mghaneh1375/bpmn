@@ -1,10 +1,42 @@
 import Modeler from 'bpmn-js/lib/Modeler';
-import CliModule from 'bpmn-js-cli';
-// import EventBus from 'diagram-js/lib/core/EventBus';
-
+import EventBus from 'diagram-js/lib/core/EventBus';
 import * as PanelProperties from 'customPanel/PanelProperties';
 import * as draw from 'customPanel/draw';
-import * as Palette from 'customPanel/palette/MyPaletteProvider';
+
+const uploadServer = "https://ppl.ut.ac.ir/demo/uploaded_diagrams/index.php";
+const baseDiagramUrl = "https://ppl.ut.ac.ir/demo/uploaded_diagrams/";
+const pageId = 26204;
+var diagramFilename = "";
+var diagramName = "";
+var diagramUrl = "";
+var diagramXmlContent = "";
+
+function getValueFromQueryString(key){
+    var searchParams = new URLSearchParams(window.location.search);
+    return searchParams.get(key);
+}
+
+diagramUrl = getValueFromQueryString('url');
+diagramName = getValueFromQueryString('name');
+
+if(diagramName != null)
+    diagramFilename =  diagramUrl.substr(diagramUrl.lastIndexOf("/")+1);
+
+if(diagramUrl == null || diagramName == null)
+{
+    alert("The diagram url or diagram name is not defined.")
+}
+else
+{
+    var expression=/(http(s)?:\/\/.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}.(bpmn|xml)/g;
+    var regex = new RegExp(expression);
+    if (diagramUrl.match(regex)) {
+        console.log("Loading diagram " + diagramUrl);
+        $.get(diagramUrl, openDiagram);
+    } else {
+        alert("The diagram url is not valid.")
+    }
+}
 
 // create a modeler
 var modeler = new Modeler({
@@ -20,26 +52,6 @@ var modeler = new Modeler({
     }
 });
 
-// eventBus.on('import.done',function(event)
-// {
-//     var tmpURL = 'http://localhost/bp/get.php';
-//     // var tmpURL = 'http://bp.vcu.ir/get.php';
-//
-//     $.ajax({
-//         type: 'post',
-//         url: tmpURL,
-//         data: {
-//             'getJSON': 'true'
-//         },
-//         success: function (xml) {
-//             Palette.parser(xml, modeling);
-//         }
-//     });
-
-    // Palette.test();
-    //console.log("Imported Completed");
-    //exportDiagram();
-// });
 
 var eventBus = modeler.get('eventBus');
 var modeling = modeler.get('modeling');
@@ -55,7 +67,7 @@ var selectedElement;
 var inputs = [];
 
 function updatePanelInfo(elem) {
-    
+
     selectedElement = elem;
     inputs = draw.drawPanel(PanelProperties.getTabs(elem));
 
@@ -115,39 +127,6 @@ function onAnyTextBoxFocusLost()  {
 }
 
 
-var urlDiagram = 'http://localhost/bp/get.php';
-// var urlDiagram = 'http://bp.vcu.ir/get.php';
-
-function getDiagram() {
-
-    $.ajax({
-        type: 'post',
-        url: urlDiagram,
-        data: {
-            'getDiagram': 'true'
-        },
-        success: function (xml) {
-            openDiagram(xml)
-        }
-    });
-}
-
-function openDiagram(bpmnXML) {
-
-    // import diagram
-    modeler.importXML(bpmnXML, function(err) {
-
-        if (err) {
-            return console.error('could not import BPMN 2.0 diagram', err);
-        }
-
-        var canvas = modeler.get('canvas');
-        canvas.zoom('fit-viewport');
-    });
-}
-
-getDiagram();
-
 $("#upl").click(function () {
     var cli = window.cli;
     $("#diagram_id").val(cli.elements()[0]);
@@ -155,10 +134,10 @@ $("#upl").click(function () {
 });
 
 $("#saveBtnFake").click(function () {
+
     modeler.saveXML({ format: true }, function(err, xml) {
 
-        var url = 'http://localhost/bp/index.php';
-        // var url = 'http://bp.vcu.ir/index.php';
+        var url = 'https://ppl.ut.ac.ir/demo/editor/basedata/index.php';
 
         if (err) {
             return console.error('could not save BPMN 2.0 diagram', err);
@@ -171,8 +150,6 @@ $("#saveBtnFake").click(function () {
                 'xml': xml
             }
         });
-
-        console.log('DIAGRAM', xml);
     });
 });
 
@@ -238,27 +215,139 @@ $("#outputBtn").click(function () {
     });
 });
 
-$("#saveBtn").click(function () {
-    modeler.saveXML({ format: true }, function(err, xml) {
+function openDiagram(bpmnXML) {
 
-        var url = 'http://localhost/bp/index.php';
-        // var url = 'http://bp.vcu.ir/index.php';
+    // import diagram
+    modeler.importXML(bpmnXML, function(err) {
 
         if (err) {
-            return console.error('could not save BPMN 2.0 diagram', err);
+            return console.error('could not import BPMN 2.0 diagram', err);
         }
 
-        $.ajax({
-            type: 'post',
-            url: url,
-            data: {
-                'xml': xml
-            },
-            success: function (response) {
-                window.location.reload();
-            }
-        });
+        // access modeler components
+        var canvas = modeler.get('canvas');
+        // var overlays = modeler.get('overlays');
 
-        console.log('DIAGRAM', xml);
+        // zoom to fit full viewport
+        canvas.zoom('fit-viewport');
+
+        // attach an overlay to a node
+        // overlays.add('SCAN_OK', 'note', {
+        //   position: {
+        //     bottom: 0,
+        //     right: 0
+        //   },
+        //   html: '<div class="diagram-note">Mixed up the labels?</div>'
+        // });
+
+        // add marker
+        // canvas.addMarker('SCAN_OK', 'needs-discussion');
     });
+}
+
+function saveDiagram(done) {
+
+    modeler.saveXML({ format: true }, function(err, xml) {
+        done(err, xml);
+    });
+}
+
+// check file api availability
+if (!window.FileList || !window.FileReader) {
+    window.alert(
+        'Looks like you use an older browser that does not support drag and drop. ' +
+        'Try using Chrome, Firefox or the Internet Explorer > 10.');
+}
+
+
+$(function() {
+    var downloadLink = $('#saveBtn');
+
+    downloadLink.click(pushToServer);
+
+    function setEncoded(link, name, data) {
+        var encodedData = encodeURIComponent(data);
+
+        if (data) {
+            link.addClass('active').attr({
+                'href': 'data:application/bpmn20-xml;charset=UTF-8,' + encodedData,
+                'download': name
+            });
+        } else {
+            link.removeClass('active');
+        }
+    }
+
+    var exportArtifacts = debounce(function() {
+
+        saveDiagram(function(err, xml) {
+            diagramXmlContent = xml;
+            //setEncoded(downloadLink, 'diagram.bpmn', err ? null : xml);
+        });
+    }, 500);
+
+    modeler.on('commandStack.changed', exportArtifacts);
 });
+
+function pushToServer()
+{
+    debugger;
+    console.log("Uploading to server !");
+    var diagramBlob = new Blob([diagramXmlContent], {type : "text/xml" , encoding : "charset=UTF-8"});
+    console.log(diagramXmlContent);
+
+
+    var formData = new FormData(); // Currently empty
+    formData.append("blob",diagramBlob);
+    formData.append("filename",diagramFilename);
+    formData.append("name",encodeURIComponent(diagramName));
+
+    $.ajax({
+        type: 'POST',
+        url: uploadServer,
+        data: formData,
+        processData: false,
+        contentType: false
+    }).done(
+        function(data) {
+            // print the output from the upload.php script\
+            console.log("Done");
+            console.log(data);
+
+            if(data.status == "ok")
+                window.location.replace("https://ppl.ut.ac.ir/demo/?page_id=" + pageId + "&diagram-url=" + baseDiagramUrl + data.file.filename + "&diagram-name=" + encodeURIComponent(diagramName));
+            else
+                alert(data.message);
+
+        })
+        .fail(
+            function(data)
+            {
+                console.log("failed");
+                console.log(data);
+
+                alert("Unable to upload diagram. please try again later.");
+            })
+        .progress(
+            function(data)
+            {
+                console.log(data);
+            }
+        );
+
+}
+
+// helpers //////////////////////
+
+function debounce(fn, timeout) {
+
+    var timer;
+
+    return function() {
+        if (timer) {
+            clearTimeout(timer);
+        }
+
+        timer = setTimeout(fn, timeout);
+    };
+}
