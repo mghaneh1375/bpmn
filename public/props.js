@@ -9,6 +9,16 @@ var showCondition;
 var placeHolder;
 var selectedJustOptions = [];
 
+// 'https://ppl.ut.ac.ir/demo/editor/basedata/getOptions.php'
+// 'http://bp.vcu.ir/getOptions.php'
+// var getOptionsURL = 'http://bp.vcu.ir/getOptions.php';
+// var getOptionsURL = 'http://localhost/bp/getOptions.php';
+var getOptionsURL = 'https://ppl.ut.ac.ir/demo/editor/basedata/getOptions.php';
+
+var getURL = 'https://ppl.ut.ac.ir/demo/editor/basedata/get.php';
+// var getURL = 'http://localhost/bp/get.php';
+// var getURL = 'http://bp.vcu.ir/get.php';
+
 function changeNewRoleStatus() {
     if($("#newRole").prop('checked')) {
         $("#newRoleText").removeClass('hidden');
@@ -183,11 +193,8 @@ function getNodes(vals, roleVals, id) {
 
     roles = [];
 
-    // var url = 'http://bp.vcu.ir/get.php';
-    var url = 'https://ppl.ut.ac.ir/demo/editor/basedata/get.php';
-
     $.ajax({
-        url: url,
+        url: getURL,
         type: 'post',
         data: {
             'getNodes': true,
@@ -220,12 +227,9 @@ function fetchData(id) {
             return;
     }
 
-    // var url = 'http://bp.vcu.ir/getOptions.php';
-    var url = 'https://ppl.ut.ac.ir/demo/editor/basedata/getOptions.php';
-
     $.ajax({
         type: 'post',
-        url: url,
+        url: getOptionsURL,
         data: {
             'kind': id
         },
@@ -371,6 +375,34 @@ function showPopupSelect(pH, id, label) {
     getNodes($("#" + id).attr('data-val').split('$$'), $("#role_" + id).attr('data-val').split('$$'), id);
 }
 
+function getComboOptions(id) {
+
+    $.ajax({
+        type: 'post',
+        url: getOptionsURL,
+        data: {
+            'kind': id
+        },
+        success: function (response) {
+
+            response = JSON.parse(response);
+
+            var newElement = "<option value='-1'>آیتم مورد نظر</option>";
+
+            var tmpSelected = $("#" + id).val();
+
+            for(var i = 0; i < response.length; i++) {
+                if(tmpSelected == response[i].id)
+                    newElement += "<option selected value='" + response[i].id + "'>" + response[i].name + "</option>";
+                else
+                    newElement += "<option value='" + response[i].id + "'>" + response[i].name + "</option>";
+            }
+
+            $("#select_" + id).empty().append(newElement);
+        }
+    });
+}
+
 function showPopupSelect2(id, label, mode) {
 
     mainSelectedId = id;
@@ -381,6 +413,7 @@ function showPopupSelect2(id, label, mode) {
     $("#type1").addClass('hidden');
     $("#type2").removeClass('hidden');
     $("#conditionResultsInType2").empty();
+    selectedJustOptions = [];
 
     getJustOptions($("#" + id).attr('data-val').split('$$'), id, mode);
 }
@@ -389,7 +422,7 @@ function getJustOptions(selected, id, mode) {
 
     $.ajax({
         type: 'post',
-        url: 'https://ppl.ut.ac.ir/demo/editor/basedata/getOptions.php',
+        url: getOptionsURL,
         data: {
             'kind': id
         },
@@ -630,7 +663,7 @@ function done() {
     }
 
     else {
-
+        
         for(j = 0; j < selectedJustOptions.length - 1; j++)
             text2 += selectedJustOptions[j].id + "$$";
 

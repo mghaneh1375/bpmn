@@ -80,10 +80,24 @@
     <script src="./bootstrap.js"></script>
     <link href="./select2.css" rel="stylesheet" />
     <script src="./select2.js"></script>
+    <link rel="stylesheet" href="jquery.rateyo.css"/>
+
+    <script src = "./calendar.js"></script>
+    <script src = "./calendar-setup.js"></script>
+    <script src = "./calendar-fa.js"></script>
+    <script src = "./jalali.js"></script>
+    <link rel="stylesheet" href = "./calendar-green.css">
 
     <link rel="stylesheet" href="./treeview.css">
 
     <style>
+
+        #tab-panel {
+            padding: 7px;
+            border: 1px solid black;
+            border-radius: 7px;
+            background-color: rgb(248, 248, 248);
+        }
 
         .bpp-properties-entry {
             direction: rtl;
@@ -178,7 +192,13 @@
         tr:nth-child(odd) {
             background: white;
         }
+        .jq-ry-group > svg {
+            margin-left: 0 !important;
+        }
 
+        .inline_elem {
+            display: inline-block;
+        }
     </style>
 
 </head>
@@ -193,16 +213,15 @@
             <div id="canvas"></div>
         </div>
 
-        <div style="width: 30%; float: left">
-            <div id="js-properties-panel"></div>
-        </div>
-    </div>
+        <div id="tab-panel" style="width: 30%; float: left">
 
-    <div>
-        <button style="margin-top: 20px" class="btn btn-primary" id="saveBtn">ذخیره</button>
-        <button class="btn btn-primary hidden" id="saveBtnFake">ذخیره</button>
-        <button style="margin-top: 20px" class="btn btn-primary" id="printBtn">چاپ</button>
-        <button style="margin-top: 20px" class="btn btn-primary" id="outputBtn">خروجی</button>
+            <div id="js-properties-panel"></div>
+
+            <button style="margin-top: 20px" class="btn btn-primary" id="saveBtn">ذخیره</button>
+            <button class="btn btn-primary hidden" id="saveBtnFake">ذخیره</button>
+            <button style="margin-top: 20px" class="btn btn-primary" id="printBtn">چاپ</button>
+            <button style="margin-top: 20px" class="btn btn-primary" id="outputBtn">خروجی</button>
+        </div>
     </div>
 
     <div class="popup" id="taskPopup">
@@ -377,7 +396,7 @@
     <script src="./fileUploader/js/jquery.iframe-transport.js"></script>
     <script src="./fileUploader/js/jquery.fileupload.js"></script>
     <script src="./fileUploader/js/script.js"></script>
-
+    <script src="jquery.rateyo.js"></script>
 
     <script>
 
@@ -397,6 +416,19 @@
                     $("#saveBtnFake").click();
                 }
             });
+        }
+
+        function initialRating() {
+            $("#importanceRating").rateYo({
+                fullStar: true,
+                onSet: function (rating, rateYoInstance) {
+
+                }
+            });
+        }
+
+        function changeCombo(val, elem) {
+            $("#" + elem).val(val).change().focusout();
         }
 
     </script>

@@ -1,6 +1,5 @@
 import Modeler from 'bpmn-js/lib/Modeler';
 import CliModule from 'bpmn-js-cli';
-import EventBus from 'diagram-js/lib/core/EventBus';
 import * as PanelProperties from 'customPanel/PanelProperties';
 import * as draw from 'customPanel/draw';
 
@@ -66,11 +65,15 @@ eventBus.on('element.click',function(event) {
 
 var selectedElement;
 var inputs = [];
+var combos = [];
 
 function updatePanelInfo(elem) {
 
     selectedElement = elem;
     inputs = draw.drawPanel(PanelProperties.getTabs(elem));
+
+    combos = inputs[1];
+    inputs = inputs[0];
 
     var tagsVal = $("#tag").val();
 
@@ -88,7 +91,35 @@ function updatePanelInfo(elem) {
 
     $(".defaultInput").change(onAnyTextBoxChanged).focusout(onAnyTextBoxFocusLost);
 
-    for (var i = 0; i < inputs.length; i++) {
+    for (var i = 0; i < combos.length; i++) {
+        getComboOptions(combos[i]);
+        $("#" + combos[i]).change(onAnyTextBoxChanged).focusout(onAnyTextBoxFocusLost);
+    }
+
+    for (i = 0; i < inputs.length; i++) {
+
+        if(inputs[i] == "Importance") {
+
+            var oldRate = $("#Importance").val();
+
+            $("#importanceRating").rateYo({
+                fullStar: true,
+                rating: (oldRate.length == 0) ? 0 : oldRate,
+                onSet: function (rating, rateYoInstance) {
+                    $("#Importance").val(rating).change().focusout();
+                }
+            });
+        }
+
+        else if(inputs[i] == "approvalDate" || inputs[i] == "dateOfDelivery") {
+            Calendar.setup({
+                inputField: inputs[i],
+                button: inputs[i] + "_date_btn",
+                ifFormat: "%Y/%m/%d",
+                dateType: "jalali"
+            });
+        }
+
         $("#" + inputs[i]).change(onAnyTextBoxChanged).focusout(onAnyTextBoxFocusLost);
     }
 }
@@ -112,6 +143,10 @@ function onAnyTextBoxFocusLost()  {
     if(isDiagramDirty == true && typeof selectedElement !== 'undefined')  {
 
         var properties = {};
+
+        for(i = 0; i < combos.length; i++) {
+            properties[combos[i]] = $("#" + combos[i]).val();
+        }
 
         for (var i = 0; i < inputs.length; i++) {
             properties[inputs[i]] = $("#" + inputs[i]).val();
