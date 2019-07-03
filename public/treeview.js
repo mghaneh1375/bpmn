@@ -84,9 +84,9 @@
         function getPath(id) {
 
             for(var j = 0; j < treeViewData.length; j++) {
-                if (parseInt(treeViewData[j].Id) == id) {
-                    if (treeViewData[j].ParentId != null)
-                        return getPath(treeViewData[j].ParentId) + " => " + treeViewData[j].Title;
+                if (parseInt(treeViewData[j].id) == id) {
+                    if (treeViewData[j].parentId != 0)
+                        return getPath(treeViewData[j].parentId) + " => " + treeViewData[j].name;
                     return "";
                 }
             }
@@ -149,15 +149,15 @@
 
             $.each(childItems, function (index, item) {
 
-                var hasChildrenFlag = hasChildren(item.Id);
+                var hasChildrenFlag = hasChildren(item.id);
                 if (hasChildrenFlag) {
                     treeViewEndTag = '</ul></li>';
                 }
 
-                appendTreeItem(item, hasChildrenFlag, getCheckedAttribute(item.Id, isOnUpdate));
+                appendTreeItem(item, hasChildrenFlag, getCheckedAttribute(item.id, isOnUpdate));
 
                 // returning method
-                loadTreeView(item.Id, isOnUpdate);
+                loadTreeView(item.id, isOnUpdate);
 
                 treeViewHtml += treeViewEndTag;
                 treeViewEndTag = '';
@@ -179,7 +179,7 @@
             var temp = [];
 
             $.each(treeViewData, function (index, item) {
-                if (item.ParentId == parentId) {
+                if (item.parentId == parentId) {
                     temp.push(item);
                 }
             });
@@ -190,7 +190,7 @@
         function hasChildren(parentId) {
             var flag = false;
             $.each(treeViewData, function (index, item) {
-                if (item.ParentId == parentId) {
+                if (item.parentId == parentId) {
                     flag = true;
                 }
             });
@@ -212,11 +212,11 @@
             }
 
             if (hasChildren) {
-                treeViewHtml += '<li><span class="' + nodeSignCssClass + '"></span><label class="' + selectedClass + '"><input data-name="' + obj.Title + '" type="checkbox" data-id="' + obj.Id + '" ' + checkedAttribute + ' class="chk" /> ' + obj.Title + '</label><span class="btn-wrpr">' + updatableHtml + deletableHtml + '</span>';
+                treeViewHtml += '<li><span class="' + nodeSignCssClass + '"></span><label class="' + selectedClass + '"><input data-name="' + obj.name + '" type="checkbox" data-id="' + obj.id + '" ' + checkedAttribute + ' class="chk" /> ' + obj.name + '</label><span class="btn-wrpr">' + updatableHtml + deletableHtml + '</span>';
                 treeViewHtml += '<ul>';
             }
             else {
-                treeViewHtml += '<li><span class="node-none"></span><label class="' + selectedClass + '"><input type="checkbox" data-name="' + obj.Title + '" data-id="' + obj.Id + '" ' + checkedAttribute + ' class="chk leaf" /> ' + obj.Title + '</label><span class="btn-wrpr">' + updatableHtml + deletableHtml + '</span></li>';
+                treeViewHtml += '<li><span class="node-none"></span><label class="' + selectedClass + '"><input type="checkbox" data-name="' + obj.name + '" data-id="' + obj.id + '" ' + checkedAttribute + ' class="chk leaf" /> ' + obj.name + '</label><span class="btn-wrpr">' + updatableHtml + deletableHtml + '</span></li>';
             }
         }
 
@@ -293,7 +293,7 @@
             var temp;
 
             $.each(treeViewData, function (index, item) {
-                if (item.Id === id) {
+                if (item.id === id) {
                     temp = item;
                 }
             });

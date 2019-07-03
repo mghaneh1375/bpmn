@@ -1,3 +1,4 @@
+
 import Modeler from 'bpmn-js/lib/Modeler';
 import CliModule from 'bpmn-js-cli';
 import * as PanelProperties from 'customPanel/PanelProperties';

@@ -67,7 +67,7 @@ function parseNodes(vals, roleVals) {
         var newElement = "<option value='-1'> شرط مورد نظر</option>";
 
         for (i = 0; i < options.length; i++) {
-            if (options[i].id == 'itemBoxes_' + mainSelectedId) {
+            if (options[i].id == mainSelectedId) {
                 for(var j = 0; j < options[i].items.length; j++) {
                     newElement += "<optgroup label='" + options[i].items[j].name + "'>";
                     for (var k = 0; k < options[i].items[j].elements.length; k++) {
@@ -203,6 +203,14 @@ function getNodes(vals, roleVals, id) {
         success: function (response) {
             treeViewData = JSON.parse(response);
 
+            for(var i = 0; i < treeViewData.length; i++) {
+                if(parseInt(treeViewData[i].parentId) == 0)
+                    treeViewData[i].parentId = -1;
+            }
+
+            treeViewData[treeViewData.length] = {'name': 'root', 'id': -1, 'parentId': 0};
+
+
             // set settings for treeview
             artaraxTreeView = $.artaraxTreeView({
                 jsonData: treeViewData,
@@ -211,7 +219,8 @@ function getNodes(vals, roleVals, id) {
             });
 
             // load treeview
-            artaraxTreeView.loadTreeViewOnInsert(1); // 1 is the root id
+            // treeViewData.length
+            artaraxTreeView.loadTreeViewOnInsert(-1); // 1 is the root id
 
             createNodes(treeViewData);
             parseNodes(vals, roleVals);
@@ -236,10 +245,11 @@ function fetchData(id) {
         success: function (response) {
 
             response = JSON.parse(response);
+            
             var items = [];
 
             for(var i = 0; i < response.length; i++) {
-                items[i] = {"name": response[i].name, 'elements': response[i].elements};
+                items[i] = {"name": response[i].group, 'elements': response[i].case};
             }
 
             options[options.length] = {'id': id, 'items': items};
@@ -279,7 +289,7 @@ function getItemAndRole(itemId, roleIds, defaultVal) {
     var itemIdx = -1;
 
     for(var k = 0; k < options.length; k++) {
-        if(options[k].id == "itemBoxes_" + mainSelectedId) {
+        if(options[k].id == mainSelectedId) {
             itemIdx = k;
             break;
         }
@@ -370,7 +380,7 @@ function showPopupSelect(pH, id, label) {
     $("#not_found_condition_text").empty().append(pH);
     $("#table_condition_text").empty().append(pH);
 
-    fetchData("itemBoxes_" + mainSelectedId);
+    fetchData(mainSelectedId);
 
     getNodes($("#" + id).attr('data-val').split('$$'), $("#role_" + id).attr('data-val').split('$$'), id);
 }
@@ -401,6 +411,7 @@ function getComboOptions(id) {
             $("#select_" + id).empty().append(newElement);
         }
     });
+
 }
 
 function showPopupSelect2(id, label, mode) {
@@ -419,7 +430,6 @@ function showPopupSelect2(id, label, mode) {
 }
 
 function getJustOptions(selected, id, mode) {
-
     $.ajax({
         type: 'post',
         url: getOptionsURL,
@@ -528,7 +538,7 @@ function submit() {
 
     if(showCondition) {
         for (var t = 0; t < options.length; t++) {
-            if (options[t].id == "itemBoxes_" + mainSelectedId) {
+            if (options[t].id == mainSelectedId) {
                 for (k = 0; k < conditions.length; k++) {
                     allow = true;
                     for (i = 0; i < options[t].items.length; i++) {

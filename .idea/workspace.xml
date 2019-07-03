@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="707d5b41-aea8-4da7-8864-dafecc362abc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/myIndex.js" />
+    <list default="true" id="707d5b41-aea8-4da7-8864-dafecc362abc" name="Default" comment="custom panel updated">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/bpmn_node_modules.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/bpmn.iml" afterPath="$PROJECT_DIR$/.idea/bpmn.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/customPanel/factory/ElementFactory.js" afterPath="$PROJECT_DIR$/node_modules/customPanel/factory/ElementFactory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/customPanel/parts/GeneralNameProps.js" afterPath="$PROJECT_DIR$/node_modules/customPanel/parts/GeneralNameProps.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/app.bundled.js" afterPath="$PROJECT_DIR$/public/app.bundled.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/myIndex.js" afterPath="$PROJECT_DIR$/public/myIndex.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/props.js" afterPath="$PROJECT_DIR$/public/props.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/treeview.js" afterPath="$PROJECT_DIR$/public/treeview.js" />
     </list>
     <ignored path="bpmn.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -20,6 +30,38 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FUSProjectUsageTrigger">
+    <session id="509123531">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="134" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JavaScript" value="134" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="js" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JavaScript" value="7" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="bpmn" />
   </component>
@@ -28,223 +70,100 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!block;n#getValueFromQueryString#0" expanded="false" />
-                <element signature="e#837#901#0" expanded="false" />
-                <element signature="e#907#1226#0" expanded="false" />
-                <element signature="e#1063#1164#0" expanded="false" />
-                <element signature="e#1170#1224#0" expanded="false" />
-                <element signature="e#1274#1438#0" expanded="false" />
-                <element signature="e#1316#1346#0" expanded="false" />
-                <element signature="e#1371#1396#0" expanded="false" />
-                <element signature="e#1407#1436#0" expanded="false" />
-                <element signature="e#1582#1666#0" expanded="false" />
-                <element signature="e#1961#2050#0" expanded="false" />
-                <element signature="e#2060#2110#0" expanded="false" />
-                <element signature="n#!!block;n#onAnyTextBoxChanged#0" expanded="false" />
-                <element signature="n#!!block;n#updateTags#0" expanded="false" />
-                <element signature="e#3827#3977#0" expanded="false" />
-                <element signature="e#4023#4096#0" expanded="false" />
-                <element signature="e#4234#4341#0" expanded="false" />
-                <element signature="e#4381#4769#0" expanded="false" />
-                <element signature="e#4441#4765#0" expanded="false" />
-                <element signature="e#4535#4620#0" expanded="false" />
-                <element signature="e#4637#4757#0" expanded="false" />
-                <element signature="e#4705#4747#0" expanded="false" />
-                <element signature="e#4806#6043#0" expanded="false" />
-                <element signature="e#4849#6039#0" expanded="false" />
-                <element signature="e#4868#4911#0" expanded="false" />
-                <element signature="e#4925#6033#0" expanded="false" />
-                <element signature="e#5131#5574#0" expanded="false" />
-                <element signature="e#5433#5555#0" expanded="false" />
-                <element signature="e#5588#5631#0" expanded="false" />
-                <element signature="e#6081#6871#0" expanded="false" />
-                <element signature="e#6124#6867#0" expanded="false" />
-                <element signature="e#6143#6186#0" expanded="false" />
-                <element signature="e#6200#6861#0" expanded="false" />
-                <element signature="e#6407#6851#0" expanded="false" />
-                <element signature="e#6710#6832#0" expanded="false" />
-                <element signature="n#!!block;n#openDiagram#0" expanded="false" />
-                <element signature="e#6975#7644#0" expanded="false" />
-                <element signature="e#6995#7082#0" expanded="false" />
-                <element signature="e#7300#7330#0" expanded="false" />
-                <element signature="e#7565#7578#0" expanded="false" />
-                <element signature="n#!!block;n#saveDiagram#0" expanded="false" />
-                <element signature="e#7737#7768#0" expanded="false" />
-                <element signature="e#7849#8025#0" expanded="false" />
-                <element signature="e#8041#8773#0" expanded="false" />
-                <element signature="e#8163#8486#0" expanded="false" />
-                <element signature="e#8236#8423#0" expanded="false" />
-                <element signature="e#8279#8411#0" expanded="false" />
-                <element signature="e#8429#8480#0" expanded="false" />
-                <element signature="e#8534#8706#0" expanded="false" />
-                <element signature="e#8576#8698#0" expanded="false" />
-                <element signature="n#!!block;n#pushToServer#0" expanded="false" />
-                <element signature="e#9217#9352#0" expanded="false" />
-                <element signature="e#9383#9808#0" expanded="false" />
-                <element signature="e#9864#10030#0" expanded="false" />
-                <element signature="e#10090#10140#0" expanded="false" />
-                <element signature="n#!!block;n#debounce#0" expanded="false" />
-                <element signature="e#10263#10376#0" expanded="false" />
-                <element signature="e#10284#10328#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="74">
+              <caret line="369" column="13" selection-start-line="369" selection-start-column="13" selection-end-line="369" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myIndex.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="myIndex.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/myIndex.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
+            <state relative-caret-position="448">
               <caret line="299" column="3" selection-start-line="299" selection-start-column="3" selection-end-line="299" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-                <element signature="e#137#200#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="props.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="props.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/props.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="198">
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding>
-                <element signature="e#193#254#0" expanded="false" />
-                <element signature="n#!!block;n#changeNewRoleStatus#0" expanded="false" />
-                <element signature="e#721#820#0" expanded="false" />
-                <element signature="e#830#929#0" expanded="false" />
-                <element signature="n#!!block;n#changeNewConditionStatus#0" expanded="false" />
-                <element signature="e#1014#1122#0" expanded="false" />
-                <element signature="e#1132#1240#0" expanded="false" />
-                <element signature="n#!!block;n#parseNodes#0" expanded="false" />
-                <element signature="e#1344#1566#0" expanded="false" />
-                <element signature="e#1388#1560#0" expanded="false" />
-                <element signature="e#1576#1668#0" expanded="false" />
-                <element signature="e#1762#2725#0" expanded="false" />
-                <element signature="e#1880#2477#0" expanded="false" />
-                <element signature="e#1946#2467#0" expanded="false" />
-                <element signature="e#2013#2430#0" expanded="false" />
-                <element signature="e#2186#2363#0" expanded="false" />
-                <element signature="e#2552#2650#0" expanded="false" />
-                <element signature="n#!!block;n#showSelectedNodes#0" expanded="false" />
-                <element signature="e#2988#4561#0" expanded="false" />
-                <element signature="e#3041#4555#0" expanded="false" />
-                <element signature="e#3562#3657#0" expanded="false" />
-                <element signature="e#3708#3827#0" expanded="false" />
-                <element signature="e#4122#4245#0" expanded="false" />
-                <element signature="e#4263#4444#0" expanded="false" />
-                <element signature="e#4571#5287#0" expanded="false" />
-                <element signature="e#4623#5281#0" expanded="false" />
-                <element signature="n#!!block;n#selectDefault#0" expanded="false" />
-                <element signature="e#5426#5480#0" expanded="false" />
-                <element signature="n#!!block;n#selectNewCondition#0" expanded="false" />
-                <element signature="e#5676#5736#0" expanded="false" />
-                <element signature="n#!!block;n#deleteCondition#0" expanded="false" />
-                <element signature="n#!!block;n#createNodes#0" expanded="false" />
-                <element signature="e#6276#6343#0" expanded="false" />
-                <element signature="n#!!block;n#getNodes#0" expanded="false" />
-                <element signature="e#6416#7136#0" expanded="false" />
-                <element signature="e#6475#6537#0" expanded="false" />
-                <element signature="e#6576#7130#0" expanded="false" />
-                <element signature="e#6717#6935#0" expanded="false" />
-                <element signature="n#!!block;n#fetchData#0" expanded="false" />
-                <element signature="e#7213#7272#0" expanded="false" />
-                <element signature="e#7285#7741#0" expanded="false" />
-                <element signature="e#7351#7385#0" expanded="false" />
-                <element signature="e#7424#7735#0" expanded="false" />
-                <element signature="e#7554#7658#0" expanded="false" />
-                <element signature="n#!!block;n#getOnlyRoles#0" expanded="false" />
-                <element signature="e#7900#8193#0" expanded="false" />
-                <element signature="e#8004#8187#0" expanded="false" />
-                <element signature="e#8059#8177#0" expanded="false" />
-                <element signature="n#!!block;n#getItemAndRole#0" expanded="false" />
-                <element signature="e#8460#8582#0" expanded="false" />
-                <element signature="e#8521#8576#0" expanded="false" />
-                <element signature="e#8716#9457#0" expanded="false" />
-                <element signature="e#8820#8950#0" expanded="false" />
-                <element signature="e#9038#9451#0" expanded="false" />
-                <element signature="e#9120#9395#0" expanded="false" />
-                <element signature="e#9203#9381#0" expanded="false" />
-                <element signature="e#9598#10086#0" expanded="false" />
-                <element signature="e#9692#9800#0" expanded="false" />
-                <element signature="e#9814#10080#0" expanded="false" />
-                <element signature="e#9863#10070#0" expanded="false" />
-                <element signature="e#9922#10056#0" expanded="false" />
-                <element signature="n#!!block;n#showPopupSelect#0" expanded="false" />
-                <element signature="n#!!block;n#getComboOptions#0" expanded="false" />
-                <element signature="e#11186#11943#0" expanded="false" />
-                <element signature="e#11252#11286#0" expanded="false" />
-                <element signature="e#11325#11937#0" expanded="false" />
-                <element signature="e#11552#11867#0" expanded="false" />
-                <element signature="n#!!block;n#showPopupSelect2#0" expanded="false" />
-                <element signature="n#!!block;n#getJustOptions#0" expanded="false" />
-                <element signature="e#12401#13732#0" expanded="false" />
-                <element signature="e#12467#12501#0" expanded="false" />
-                <element signature="e#12540#13726#0" expanded="false" />
-                <element signature="e#12801#13323#0" expanded="false" />
-                <element signature="e#12864#13202#0" expanded="false" />
-                <element signature="e#12924#13184#0" expanded="false" />
-                <element signature="e#13000#13130#0" expanded="false" />
-                <element signature="e#13409#13522#0" expanded="false" />
                 <element signature="n#!!block;n#selectNewJustOption#0" expanded="false" />
-                <element signature="e#13845#13927#0" expanded="false" />
-                <element signature="e#13937#14172#0" expanded="false" />
-                <element signature="e#13999#14082#0" expanded="false" />
+                <element signature="e#14124#14206#0" expanded="false" />
+                <element signature="e#14216#14451#0" expanded="false" />
+                <element signature="e#14278#14361#0" expanded="false" />
                 <element signature="n#!!block;n#renderJustOptions#0" expanded="false" />
-                <element signature="e#14267#14393#0" expanded="false" />
-                <element signature="e#14312#14387#0" expanded="false" />
-                <element signature="e#14404#14902#0" expanded="false" />
-                <element signature="e#14497#14829#0" expanded="false" />
+                <element signature="e#14546#14672#0" expanded="false" />
+                <element signature="e#14591#14666#0" expanded="false" />
+                <element signature="e#14683#15181#0" expanded="false" />
+                <element signature="e#14776#15108#0" expanded="false" />
                 <element signature="n#!!block;n#deleteConditionJustOptions#0" expanded="false" />
-                <element signature="n#!!block;n#submit#0" expanded="false" />
-                <element signature="e#15138#15372#0" expanded="false" />
-                <element signature="e#15382#15565#0" expanded="false" />
-                <element signature="e#15642#16913#0" expanded="false" />
-                <element signature="e#15693#16620#0" expanded="false" />
-                <element signature="e#15759#16610#0" expanded="false" />
-                <element signature="e#15817#16573#0" expanded="false" />
-                <element signature="e#15919#16427#0" expanded="false" />
-                <element signature="e#16002#16335#0" expanded="false" />
-                <element signature="e#16089#16309#0" expanded="false" />
-                <element signature="e#16924#17003#0" expanded="false" />
-                <element signature="e#17008#17026#0" expanded="false" />
+                <element signature="e#15417#15651#0" expanded="false" />
+                <element signature="e#15661#15844#0" expanded="false" />
+                <element signature="e#16081#16837#0" expanded="false" />
+                <element signature="e#16183#16691#0" expanded="false" />
+                <element signature="e#16266#16599#0" expanded="false" />
+                <element signature="e#16353#16573#0" expanded="false" />
+                <element signature="e#17188#17267#0" expanded="false" />
+                <element signature="e#17272#17290#0" expanded="false" />
                 <element signature="n#!!block;n#deleteRow#0" expanded="false" />
-                <element signature="e#17706#20745#0" expanded="false" />
-                <element signature="e#17751#19226#0" expanded="false" />
-                <element signature="e#17825#18087#0" expanded="false" />
-                <element signature="e#18144#18488#0" expanded="false" />
-                <element signature="e#18567#18829#0" expanded="false" />
-                <element signature="e#18890#19212#0" expanded="false" />
-                <element signature="e#19245#20735#0" expanded="false" />
-                <element signature="e#19382#19632#0" expanded="false" />
-                <element signature="e#19689#20021#0" expanded="false" />
-                <element signature="e#20100#20350#0" expanded="false" />
-                <element signature="e#20411#20721#0" expanded="false" />
+                <element signature="e#18015#19490#0" expanded="false" />
+                <element signature="e#18089#18351#0" expanded="false" />
+                <element signature="e#18408#18752#0" expanded="false" />
+                <element signature="e#18831#19093#0" expanded="false" />
+                <element signature="e#19154#19476#0" expanded="false" />
+                <element signature="e#19646#19896#0" expanded="false" />
+                <element signature="e#19953#20285#0" expanded="false" />
+                <element signature="e#20364#20614#0" expanded="false" />
+                <element signature="e#20675#20985#0" expanded="false" />
                 <element signature="n#!!block;n#changeTab#0" expanded="false" />
-                <element signature="e#21344#21496#0" expanded="false" />
-                <marker date="1557772672309" expanded="false" signature="3987:4002" placeholder="..." />
-                <marker date="1557772672309" expanded="false" signature="4178:4208" placeholder="..." />
-                <marker date="1557772672309" expanded="false" signature="4319:4337" placeholder="..." />
-                <marker date="1557772672309" expanded="false" signature="4729:4873" placeholder="..." />
-                <marker date="1557772672309" expanded="false" signature="5133:5148" placeholder="..." />
-                <marker date="1557772672309" expanded="false" signature="5828:5841" placeholder="..." />
-                <marker date="1557772672309" expanded="false" signature="5910:5942" placeholder="..." />
-                <marker date="1557772672309" expanded="false" signature="14563:14576" placeholder="..." />
-                <marker date="1557772672309" expanded="false" signature="14653:14685" placeholder="..." />
+                <element signature="e#21608#21760#0" expanded="false" />
+                <marker date="1562180653763" expanded="true" signature="3972:3987" placeholder="..." />
+                <marker date="1562180653763" expanded="true" signature="4163:4193" placeholder="..." />
+                <marker date="1562180653763" expanded="true" signature="4304:4322" placeholder="..." />
+                <marker date="1562180653763" expanded="true" signature="4714:4858" placeholder="..." />
+                <marker date="1562180653763" expanded="true" signature="5118:5133" placeholder="..." />
+                <marker date="1562180653763" expanded="true" signature="5813:5826" placeholder="..." />
+                <marker date="1562180653763" expanded="true" signature="5895:5927" placeholder="..." />
+                <marker date="1562180653763" expanded="true" signature="14842:14855" placeholder="..." />
+                <marker date="1562180653763" expanded="true" signature="14932:14964" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
+      <file leaf-file-name="treeview.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/treeview.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+            <state relative-caret-position="218">
+              <caret line="87" column="54" selection-start-line="87" selection-start-column="54" selection-end-line="87" selection-end-column="54" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="get.php" pinned="false" current-in-tab="false">
+        <entry file="file://C:/xampp/htdocs/bp/get.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getOptions.php" pinned="false" current-in-tab="false">
+        <entry file="file://C:/xampp/htdocs/bp/getOptions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="28" column="84" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -253,8 +172,8 @@
       <file leaf-file-name="ElementFactory.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/customPanel/factory/ElementFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
+            <state relative-caret-position="2178">
+              <caret line="251" column="57" selection-start-line="251" selection-start-column="57" selection-end-line="251" selection-end-column="57" />
               <folding>
                 <element signature="n#!!block;n#ratingBox#0" expanded="false" />
                 <element signature="n#!!block;n#textBox#0" expanded="false" />
@@ -268,91 +187,54 @@
                 <element signature="n#!!block;n#hiddenTagBox#0" expanded="false" />
                 <element signature="n#!!block;n#textarea#0" expanded="false" />
                 <element signature="e#6085#6161#0" expanded="false" />
-                <element signature="n#!!block;n#textBox2#0" expanded="false" />
                 <element signature="e#7013#7082#0" expanded="false" />
-                <element signature="e#8053#8098#0" expanded="false" />
-                <element signature="e#8203#8223#0" expanded="false" />
-                <element signature="n#!!block;n#textBoxWithOutCondition#0" expanded="false" />
-                <marker date="1557745459229" expanded="false" signature="1106:1118" placeholder="..." />
-                <marker date="1557745459229" expanded="true" signature="3299:3455" placeholder="..." />
-                <marker date="1557745459229" expanded="true" signature="3334:3391" placeholder="..." />
-                <marker date="1557745459229" expanded="true" signature="3334:3393" placeholder="..." />
-                <marker date="1557745459229" expanded="true" signature="3334:3412" placeholder="..." />
-                <marker date="1557745459229" expanded="true" signature="3334:3455" placeholder="..." />
-                <marker date="1557745459229" expanded="false" signature="3946:3990" placeholder="..." />
-                <marker date="1557745459229" expanded="false" signature="4624:4636" placeholder="..." />
-                <marker date="1557745459229" expanded="false" signature="4945:4980" placeholder="..." />
-                <marker date="1557745459229" expanded="false" signature="5728:5743" placeholder="..." />
-                <marker date="1557745459229" expanded="false" signature="6534:6630" placeholder="..." />
-                <marker date="1557745459229" expanded="false" signature="7372:7407" placeholder="..." />
-                <marker date="1557745459229" expanded="false" signature="7977:7989" placeholder="..." />
-                <marker date="1557745459229" expanded="false" signature="8772:8807" placeholder="..." />
-                <marker date="1557745459229" expanded="false" signature="9202:9214" placeholder="..." />
+                <element signature="e#8043#8088#0" expanded="false" />
+                <element signature="e#8193#8213#0" expanded="false" />
+                <marker date="1562159224861" expanded="false" signature="1106:1118" placeholder="..." />
+                <marker date="1562159224861" expanded="true" signature="3299:3455" placeholder="..." />
+                <marker date="1562159224861" expanded="true" signature="3334:3391" placeholder="..." />
+                <marker date="1562159224861" expanded="true" signature="3334:3393" placeholder="..." />
+                <marker date="1562159224861" expanded="true" signature="3334:3412" placeholder="..." />
+                <marker date="1562159224861" expanded="true" signature="3334:3455" placeholder="..." />
+                <marker date="1562159224861" expanded="false" signature="3946:3990" placeholder="..." />
+                <marker date="1562159224861" expanded="false" signature="4624:4636" placeholder="..." />
+                <marker date="1562159224861" expanded="false" signature="4945:4980" placeholder="..." />
+                <marker date="1562159224861" expanded="false" signature="5728:5743" placeholder="..." />
+                <marker date="1562159224861" expanded="false" signature="6534:6630" placeholder="..." />
+                <marker date="1562159224861" expanded="false" signature="7372:7407" placeholder="..." />
+                <marker date="1562159224861" expanded="true" signature="7977:7989" placeholder="..." />
+                <marker date="1562159224861" expanded="false" signature="8762:8797" placeholder="..." />
+                <marker date="1562159224861" expanded="true" signature="9192:9204" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PanelProperties.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/customPanel/PanelProperties.js">
+      <file leaf-file-name="GeneralNameProps.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/GeneralNameProps.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="200" column="54" selection-start-line="200" selection-start-column="54" selection-end-line="200" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-                <element signature="n#!!block;n#createGeneralTabGroups#0" expanded="false" />
-                <element signature="e#2538#2620#0" expanded="false" />
-                <element signature="e#2743#2818#0" expanded="false" />
-                <element signature="e#3287#3369#0" expanded="false" />
-                <element signature="e#3436#3514#0" expanded="false" />
-                <element signature="e#3623#3705#0" expanded="false" />
-                <element signature="e#4225#4251#0" expanded="false" />
-                <element signature="n#!!block;n#createSecondaryTabGroups#0" expanded="false" />
-                <element signature="e#4368#4453#0" expanded="false" />
-                <element signature="e#4835#4865#0" expanded="false" />
-                <element signature="n#!!block;n#createThirdTabGroups#0" expanded="false" />
-                <element signature="e#4975#5048#0" expanded="false" />
-                <element signature="e#5118#5144#0" expanded="false" />
-                <element signature="n#!!block;n#createFifthTabGroups#0" expanded="false" />
-                <element signature="e#5254#5333#0" expanded="false" />
-                <element signature="e#5553#5579#0" expanded="false" />
-                <element signature="e#5691#5768#0" expanded="false" />
-                <element signature="e#6057#6086#0" expanded="false" />
-                <element signature="n#!!block;n#createDiagramTabGroups#0" expanded="false" />
-                <element signature="e#6620#6705#0" expanded="false" />
-                <element signature="e#6820#6848#0" expanded="false" />
-                <element signature="e#6955#7062#0" expanded="false" />
-                <element signature="e#7086#7196#0" expanded="false" />
-                <element signature="e#7247#8336#0" expanded="false" />
-                <element signature="e#7400#7549#0" expanded="false" />
-                <element signature="e#7460#7539#0" expanded="false" />
-                <element signature="e#7581#8013#0" expanded="false" />
-                <element signature="e#7741#8003#0" expanded="false" />
-                <element signature="e#7908#7989#0" expanded="false" />
-                <element signature="e#8138#8330#0" expanded="false" />
-                <element signature="e#8252#8320#0" expanded="false" />
-                <element signature="e#8385#8797#0" expanded="false" />
-                <element signature="e#8411#8523#0" expanded="false" />
-                <element signature="e#8549#8670#0" expanded="false" />
-                <element signature="e#8688#8790#0" expanded="false" />
-                <element signature="e#9208#9475#0" expanded="false" />
-                <element signature="e#9238#9366#0" expanded="false" />
-                <element signature="e#9384#9468#0" expanded="false" />
-                <element signature="e#9491#9742#0" expanded="false" />
-                <element signature="e#9516#9637#0" expanded="false" />
-                <element signature="e#9759#10009#0" expanded="false" />
-                <element signature="e#10022#10068#0" expanded="false" />
-                <marker date="1557769570414" expanded="false" signature="5664:6089" placeholder="{...}" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BpmnUpdater.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/bpmn-js/lib/features/modeling/BpmnUpdater.js">
+      <file leaf-file-name="UpDiagramProps.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/UpDiagramProps.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="479" column="9" selection-start-line="479" selection-start-column="9" selection-end-line="479" selection-end-column="9" />
+            <state relative-caret-position="308">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1826">
+              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -368,16 +250,21 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>عنوان عمومی</find>
+      <find>GeneralName</find>
+      <find>getOptions</find>
+      <find>i</find>
+      <find>getOptionsURL</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/select2.css" />
-        <option value="$PROJECT_DIR$/public/select2.js" />
-        <option value="$PROJECT_DIR$/public/bootstarp.css" />
-        <option value="$PROJECT_DIR$/public/tagHandler.js" />
         <option value="$PROJECT_DIR$/node_modules/customPanel/parts/UpDiagramProps.js" />
         <option value="$PROJECT_DIR$/node_modules/customPanel/parts/ResponsibleProps2.js" />
         <option value="$PROJECT_DIR$/node_modules/customPanel/parts/NextDiagramProps.js" />
@@ -397,7 +284,6 @@
         <option value="$PROJECT_DIR$/node_modules/customPanel/parts/ApprovalProps.js" />
         <option value="$PROJECT_DIR$/node_modules/customPanel/parts/DateOfDelivery.js" />
         <option value="$PROJECT_DIR$/public/calendar-setup.js" />
-        <option value="$PROJECT_DIR$/node_modules/customPanel/factory/ElementFactory.js" />
         <option value="$PROJECT_DIR$/node_modules/customPanel/draw.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/node_modules/customPanel/parts/advantagesProps.js" />
@@ -422,9 +308,14 @@
         <option value="$PROJECT_DIR$/node_modules/customPanel/parts/SpecialistProps.js" />
         <option value="$PROJECT_DIR$/node_modules/customPanel/parts/OrganizationProps.js" />
         <option value="$PROJECT_DIR$/node_modules/customPanel/PanelProperties.js" />
+        <option value="$PROJECT_DIR$/node_modules/customPanel/parts/GeneralNameProps.js" />
+        <option value="$PROJECT_DIR$/node_modules/customPanel/factory/ElementFactory.js" />
+        <option value="C:/xampp/htdocs/bp/getOptions.php" />
+        <option value="$PROJECT_DIR$/public/treeview.js" />
+        <option value="C:/xampp/htdocs/bp/get.php" />
+        <option value="$PROJECT_DIR$/public/myIndex.js" />
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/public/props.js" />
-        <option value="$PROJECT_DIR$/public/myIndex.js" />
       </list>
     </option>
   </component>
@@ -435,6 +326,14 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="PhpServers">
     <servers />
@@ -457,309 +356,57 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fonts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rateyo" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rateyo" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rateyo" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="min" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="customPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="customPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="customPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Palette" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="customPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="factory" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bpmn-js-cli" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bpmn-js-cli" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="custom-bpmn" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bpmn-js-cli" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="commands" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="custom-bpmn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="custom-bpmn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="custom-bpmn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="custom-bpmn" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="custom-bpmn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="custom-bpmn" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="customPanel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="custom-bpmn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="custom-bpmn" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="customPanel" type="462c0819:PsiDirectoryNode" />
+              <item name="parts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="custom-bpmn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="custom-bpmn" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SearchEverywhereHistoryKey" value="my&#9;FILE&#9;file://D:/custom-bpmn/public/myIndex.js&#10;props.js&#9;FILE&#9;file://D:/custom-bpmn/public/props.js&#10;props.&#9;FILE&#9;file://D:/custom-bpmn/public/props.js&#10;changeCom&#9;null&#9;null&#10;cal&#9;FILE&#9;file://D:/custom-bpmn/public/calendar-green.css&#10;Worker&#9;FILE&#9;file://D:/custom-bpmn/node_modules/customPanel/parts/WorkerProps.js&#10;index.js&#9;FILE&#9;file://D:/custom-bpmn/index.js&#10;index.&#9;FILE&#9;file://D:/custom-bpmn/index.js&#10;E&#9;FILE&#9;file://D:/custom-bpmn/node_modules/customPanel/factory/ElementFactory.js&#10;tagH&#9;FILE&#9;file://D:/custom-bpmn/public/tagHandler.js&#10;bo&#9;FILE&#9;file://D:/custom-bpmn/public/bootstarp.css&#10;pac&#9;FILE&#9;file://D:/custom-bpmn/package.json&#10;package.&#9;FILE&#9;file://D:/custom-bpmn/package.json&#10;Palet&#9;FILE&#9;file://D:/custom-bpmn/node_modules/diagram-js/lib/features/palette/Palette.js&#10;tab.&#9;FILE&#9;file://D:/custom-bpmn/public/tabs.css&#10;Atta&#9;FILE&#9;file://D:/custom-bpmn/node_modules/customPanel/parts/AttachProps.js&#10;st&#9;FILE&#9;file://D:/custom-bpmn/public/fileUploader/css/style.css&#10;style&#9;FILE&#9;file://D:/custom-bpmn/public/fileUploader/css/style.css&#10;script&#9;FILE&#9;file://D:/custom-bpmn/public/fileUploader/js/script.js&#10;fileupload&#9;FILE&#9;file://D:/custom-bpmn/public/fileUploader/js/jquery.fileupload.js&#10;styl&#9;FILE&#9;file://D:/custom-bpmn/public/fileUploader/css/style.css&#10;Ele&#9;FILE&#9;file://D:/custom-bpmn/node_modules/customPanel/factory/ElementFactory.js&#10;model&#9;FILE&#9;file://D:/custom-bpmn/node_modules/diagram-js/lib/features/modeling/Modeling.js&#10;Mode&#9;FILE&#9;file://D:/custom-bpmn/node_modules/diagram-js/lib/features/modeling/Modeling.js&#10;svgTra&#9;FILE&#9;file://D:/bpmn/node_modules/diagram-js/lib/util/SvgTransformUtil.js&#10;min-dash&#9;FILE&#9;file://D:/bpmn/node_modules/min-dash/dist/min-dash.js&#10;tabs&#9;FILE&#9;file://D:/bpmn/public/tabs.css&#10;tabs.&#9;FILE&#9;file://D:/bpmn/public/tabs.css&#10;inde&#9;FILE&#9;file://D:/bpmn/index.js&#10;index.j&#9;FILE&#9;file://D:/bpmn/index.js&#10;tabs.css&#9;FILE&#9;file://D:/bpmn/public/tabs.css&#10;UpdatePropertiesHandler&#9;FILE&#9;file://D:/bpmn/node_modules/bpmn-js/lib/features/modeling/cmd/UpdatePropertiesHandler.js&#10;commandStack&#9;FILE&#9;file://D:/bpmn/node_modules/diagram-js/lib/command/CommandStack.js&#10;modeling&#9;FILE&#9;file://D:/bpmn/node_modules/bpmn-js/lib/features/modeling/Modeling.js&#10;Chan&#9;FILE&#9;file://D:/bpmn/node_modules/diagram-js/lib/features/change-support/ChangeSupport.js&#10;PropertiesActivator&#9;FILE&#9;file://D:/bpmn/node_modules/bpmn-js-properties-panel/lib/PropertiesActivator.js&#10;C&#9;FILE&#9;file://D:/bpmn/node_modules/diagram-js/lib/features/change-support/ChangeSupport.js&#10;min-dom&#9;FILE&#9;file://D:/bpmn/node_modules/min-dom/dist/min-dom.js&#10;EventBus&#9;FILE&#9;file://D:/bpmn/node_modules/diagram-js/lib/core/EventBus.js&#10;Chec&#9;FILE&#9;file://D:/bpmn/node_modules/bpmn-js-properties-panel/lib/factory/CheckboxEntryFactory.js&#10;index&#9;FILE&#9;file://D:/bpmn/index.js&#10;graphicsFactory&#9;FILE&#9;file://D:/bpmn/node_modules/diagram-js/lib/core/GraphicsFactory.js&#10;ElementFa&#9;FILE&#9;file://D:/bpmn/node_modules/diagram-js/lib/core/ElementFactory.js&#10;SVGGElemen&#9;null&#9;null&#10;create task&#9;null&#9;null&#10;createTask&#9;null&#9;null&#10;index.h&#9;FILE&#9;file://D:/bpmn/public/index.html" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-    <property name="SearchEverywhereHistoryKey" value="props.&#9;FILE&#9;file://D:/custom-bpmn/public/props.js&#10;changeCom&#9;null&#9;null&#10;cal&#9;FILE&#9;file://D:/custom-bpmn/public/calendar-green.css&#10;Worker&#9;FILE&#9;file://D:/custom-bpmn/node_modules/customPanel/parts/WorkerProps.js&#10;index.js&#9;FILE&#9;file://D:/custom-bpmn/index.js&#10;index.&#9;FILE&#9;file://D:/custom-bpmn/index.js&#10;E&#9;FILE&#9;file://D:/custom-bpmn/node_modules/customPanel/factory/ElementFactory.js&#10;tagH&#9;FILE&#9;file://D:/custom-bpmn/public/tagHandler.js&#10;bo&#9;FILE&#9;file://D:/custom-bpmn/public/bootstarp.css&#10;pac&#9;FILE&#9;file://D:/custom-bpmn/package.json&#10;package.&#9;FILE&#9;file://D:/custom-bpmn/package.json&#10;Palet&#9;FILE&#9;file://D:/custom-bpmn/node_modules/diagram-js/lib/features/palette/Palette.js&#10;tab.&#9;FILE&#9;file://D:/custom-bpmn/public/tabs.css&#10;Atta&#9;FILE&#9;file://D:/custom-bpmn/node_modules/customPanel/parts/AttachProps.js&#10;st&#9;FILE&#9;file://D:/custom-bpmn/public/fileUploader/css/style.css&#10;style&#9;FILE&#9;file://D:/custom-bpmn/public/fileUploader/css/style.css&#10;script&#9;FILE&#9;file://D:/custom-bpmn/public/fileUploader/js/script.js&#10;fileupload&#9;FILE&#9;file://D:/custom-bpmn/public/fileUploader/js/jquery.fileupload.js&#10;styl&#9;FILE&#9;file://D:/custom-bpmn/public/fileUploader/css/style.css&#10;Ele&#9;FILE&#9;file://D:/custom-bpmn/node_modules/customPanel/factory/ElementFactory.js&#10;model&#9;FILE&#9;file://D:/custom-bpmn/node_modules/diagram-js/lib/features/modeling/Modeling.js&#10;Mode&#9;FILE&#9;file://D:/custom-bpmn/node_modules/diagram-js/lib/features/modeling/Modeling.js&#10;svgTra&#9;FILE&#9;file://D:/bpmn/node_modules/diagram-js/lib/util/SvgTransformUtil.js&#10;min-dash&#9;FILE&#9;file://D:/bpmn/node_modules/min-dash/dist/min-dash.js&#10;tabs&#9;FILE&#9;file://D:/bpmn/public/tabs.css&#10;tabs.&#9;FILE&#9;file://D:/bpmn/public/tabs.css&#10;inde&#9;FILE&#9;file://D:/bpmn/index.js&#10;index.j&#9;FILE&#9;file://D:/bpmn/index.js&#10;tabs.css&#9;FILE&#9;file://D:/bpmn/public/tabs.css&#10;UpdatePropertiesHandler&#9;FILE&#9;file://D:/bpmn/node_modules/bpmn-js/lib/features/modeling/cmd/UpdatePropertiesHandler.js&#10;commandStack&#9;FILE&#9;file://D:/bpmn/node_modules/diagram-js/lib/command/CommandStack.js&#10;modeling&#9;FILE&#9;file://D:/bpmn/node_modules/bpmn-js/lib/features/modeling/Modeling.js&#10;Chan&#9;FILE&#9;file://D:/bpmn/node_modules/diagram-js/lib/features/change-support/ChangeSupport.js&#10;PropertiesActivator&#9;FILE&#9;file://D:/bpmn/node_modules/bpmn-js-properties-panel/lib/PropertiesActivator.js&#10;C&#9;FILE&#9;file://D:/bpmn/node_modules/diagram-js/lib/features/change-support/ChangeSupport.js&#10;min-dom&#9;FILE&#9;file://D:/bpmn/node_modules/min-dom/dist/min-dom.js&#10;EventBus&#9;FILE&#9;file://D:/bpmn/node_modules/diagram-js/lib/core/EventBus.js&#10;Chec&#9;FILE&#9;file://D:/bpmn/node_modules/bpmn-js-properties-panel/lib/factory/CheckboxEntryFactory.js&#10;index&#9;FILE&#9;file://D:/bpmn/index.js&#10;graphicsFactory&#9;FILE&#9;file://D:/bpmn/node_modules/diagram-js/lib/core/GraphicsFactory.js&#10;ElementFa&#9;FILE&#9;file://D:/bpmn/node_modules/diagram-js/lib/core/ElementFactory.js&#10;SVGGElemen&#9;null&#9;null&#10;create task&#9;null&#9;null&#10;createTask&#9;null&#9;null&#10;index.h&#9;FILE&#9;file://D:/bpmn/public/index.html" />
-    <property name="nodejs_interpreter_path" value="C:\Program Files\nodejs\node" />
+    <property name="last_opened_file_path" value="D:/custom-bpmn2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path" value="C:\Program Files\nodejs\node" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -776,7 +423,19 @@
       <recent name="D:\bpmn\node_modules" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.TextBoxEntryFactory2.js">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
     <configuration default="false" name="TextBoxEntryFactory2.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="TextBoxEntryFactory2.js" working-dir="$PROJECT_DIR$/node_modules/bpmn-js-properties-panel/lib/factory">
       <method />
     </configuration>
@@ -829,11 +488,6 @@
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Node.js.TextBoxEntryFactory2.js" />
     </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.TextBoxEntryFactory2.js" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -894,7 +548,16 @@
       <workItem from="1557551995714" duration="15547000" />
       <workItem from="1557653244587" duration="2081000" />
       <workItem from="1557660544783" duration="1068000" />
-      <workItem from="1557671182949" duration="31070000" />
+      <workItem from="1557671182949" duration="31092000" />
+      <workItem from="1557820210845" duration="399000" />
+      <workItem from="1558001393439" duration="2272000" />
+      <workItem from="1558013989029" duration="387000" />
+      <workItem from="1558014525327" duration="136000" />
+      <workItem from="1558253719159" duration="1236000" />
+      <workItem from="1558274503381" duration="17000" />
+      <workItem from="1559393036705" duration="112000" />
+      <workItem from="1562138982164" duration="69000" />
+      <workItem from="1562141691212" duration="7272000" />
     </task>
     <task id="LOCAL-00001" summary="last changes">
       <created>1552215641230</created>
@@ -980,35 +643,45 @@
       <option name="project" value="LOCAL" />
       <updated>1557772836378</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="custom panel updated">
+      <created>1557772981399</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1557772981399</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="375060000" />
+    <option name="totallyTimeSpent" value="390466000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2484375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24945295" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934355" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1029,67 +702,55 @@
     <option name="LAST_COMMIT_MESSAGE" value="custom panel updated" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="2" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/WorkerProps.js">
+    <entry file="file://$PROJECT_DIR$/public/props.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/NextDiagramProps.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/calendar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/calendar-green.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/ApprovalProps.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        <state relative-caret-position="150">
+          <caret line="577" column="41" selection-start-line="577" selection-start-column="41" selection-end-line="577" selection-end-column="41" />
           <folding>
-            <marker date="1557743249513" expanded="true" signature="118:572" placeholder="{...}" />
+            <element signature="n#!!block;n#selectNewJustOption#0" expanded="false" />
+            <element signature="e#14124#14206#0" expanded="false" />
+            <element signature="e#14216#14451#0" expanded="false" />
+            <element signature="e#14278#14361#0" expanded="false" />
+            <element signature="n#!!block;n#renderJustOptions#0" expanded="false" />
+            <element signature="e#14546#14672#0" expanded="false" />
+            <element signature="e#14591#14666#0" expanded="false" />
+            <element signature="e#14683#15181#0" expanded="false" />
+            <element signature="e#14776#15108#0" expanded="false" />
+            <element signature="n#!!block;n#deleteConditionJustOptions#0" expanded="false" />
+            <element signature="e#15417#15651#0" expanded="false" />
+            <element signature="e#15661#15844#0" expanded="false" />
+            <element signature="e#16081#16837#0" expanded="false" />
+            <element signature="e#16183#16691#0" expanded="false" />
+            <element signature="e#16266#16599#0" expanded="false" />
+            <element signature="e#16353#16573#0" expanded="false" />
+            <element signature="e#17188#17267#0" expanded="false" />
+            <element signature="e#17272#17290#0" expanded="false" />
+            <element signature="n#!!block;n#deleteRow#0" expanded="false" />
+            <element signature="e#18015#19490#0" expanded="false" />
+            <element signature="e#18089#18351#0" expanded="false" />
+            <element signature="e#18408#18752#0" expanded="false" />
+            <element signature="e#18831#19093#0" expanded="false" />
+            <element signature="e#19154#19476#0" expanded="false" />
+            <element signature="e#19646#19896#0" expanded="false" />
+            <element signature="e#19953#20285#0" expanded="false" />
+            <element signature="e#20364#20614#0" expanded="false" />
+            <element signature="e#20675#20985#0" expanded="false" />
+            <element signature="n#!!block;n#changeTab#0" expanded="false" />
+            <element signature="e#21608#21760#0" expanded="false" />
+            <marker date="1562180653763" expanded="true" signature="3972:3987" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="4163:4193" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="4304:4322" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="4714:4858" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="5118:5133" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="5813:5826" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="5895:5927" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="14842:14855" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="14932:14964" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/DateOfDelivery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/calendar-setup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="144" column="53" selection-start-line="144" selection-start-column="53" selection-end-line="144" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1097,7 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="880">
           <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1105,7 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1113,7 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1121,7 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1129,7 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1137,7 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,7 +800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1153,7 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1161,7 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1169,7 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1177,7 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1185,31 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/FrequencyProps.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/MissionProps.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/PurposrProps.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1217,15 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/ParticipantsProps.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1233,7 +849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1241,7 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="32486" column="34" selection-start-line="32486" selection-start-column="34" selection-end-line="32486" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1249,7 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="564" column="6216" selection-start-line="564" selection-start-column="6216" selection-end-line="564" selection-end-column="6216" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1257,14 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="201" column="16" selection-start-line="201" selection-start-column="16" selection-end-line="201" selection-end-column="16" />
-          <folding>
-            <element signature="e#5516#8192#0" expanded="false" />
-            <element signature="e#8245#8725#0" expanded="false" />
-            <element signature="e#8755#8871#0" expanded="false" />
-            <element signature="e#8897#9365#0" expanded="false" />
-            <element signature="e#9461#9755#0" expanded="false" />
-            <element signature="e#10063#10280#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1272,7 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1584">
           <caret line="74" column="47" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1280,9 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-139">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1290,7 +891,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1298,9 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
           <caret line="79" column="1" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!block;n#computeLanesResize#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1308,7 +905,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1316,7 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
           <caret line="103" column="32" selection-start-line="103" selection-start-column="32" selection-end-line="103" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1324,7 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1332,13 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
           <caret line="193" column="31" selection-start-line="193" selection-start-column="31" selection-end-line="193" selection-end-column="31" />
-          <folding>
-            <element signature="e#1214#3256#0" expanded="false" />
-            <element signature="e#2298#2363#0" expanded="false" />
-            <element signature="e#2416#2467#0" expanded="false" />
-            <element signature="e#2553#3058#0" expanded="false" />
-            <element signature="e#3322#4320#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1346,64 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/bpmn-js/lib/features/modeling/BpmnUpdater.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="479" column="9" selection-start-line="479" selection-start-column="9" selection-end-line="479" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/factory/ElementFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!block;n#ratingBox#0" expanded="false" />
-            <element signature="n#!!block;n#textBox#0" expanded="false" />
-            <element signature="e#1445#1521#0" expanded="false" />
-            <element signature="e#1951#2168#0" expanded="false" />
-            <element signature="e#2178#2398#0" expanded="false" />
-            <element signature="e#2404#2449#0" expanded="false" />
-            <element signature="n#!!block;n#file#0" expanded="false" />
-            <element signature="e#4290#5058#0" expanded="false" />
-            <element signature="e#4338#5052#0" expanded="false" />
-            <element signature="n#!!block;n#hiddenTagBox#0" expanded="false" />
-            <element signature="n#!!block;n#textarea#0" expanded="false" />
-            <element signature="e#6085#6161#0" expanded="false" />
-            <element signature="n#!!block;n#textBox2#0" expanded="false" />
-            <element signature="e#7013#7082#0" expanded="false" />
-            <element signature="e#8053#8098#0" expanded="false" />
-            <element signature="e#8203#8223#0" expanded="false" />
-            <element signature="n#!!block;n#textBoxWithOutCondition#0" expanded="false" />
-            <marker date="1557745459229" expanded="false" signature="1106:1118" placeholder="..." />
-            <marker date="1557745459229" expanded="true" signature="3299:3455" placeholder="..." />
-            <marker date="1557745459229" expanded="true" signature="3334:3391" placeholder="..." />
-            <marker date="1557745459229" expanded="true" signature="3334:3393" placeholder="..." />
-            <marker date="1557745459229" expanded="true" signature="3334:3412" placeholder="..." />
-            <marker date="1557745459229" expanded="true" signature="3334:3455" placeholder="..." />
-            <marker date="1557745459229" expanded="false" signature="3946:3990" placeholder="..." />
-            <marker date="1557745459229" expanded="false" signature="4624:4636" placeholder="..." />
-            <marker date="1557745459229" expanded="false" signature="4945:4980" placeholder="..." />
-            <marker date="1557745459229" expanded="false" signature="5728:5743" placeholder="..." />
-            <marker date="1557745459229" expanded="false" signature="6534:6630" placeholder="..." />
-            <marker date="1557745459229" expanded="false" signature="7372:7407" placeholder="..." />
-            <marker date="1557745459229" expanded="false" signature="7977:7989" placeholder="..." />
-            <marker date="1557745459229" expanded="false" signature="8772:8807" placeholder="..." />
-            <marker date="1557745459229" expanded="false" signature="9202:9214" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/AchievementProps.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1411,7 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1419,7 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="18" column="34" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1427,7 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1435,16 +961,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Telegram Desktop/index.js" />
+    <entry file="file://$USER_HOME$/Desktop/index.js" />
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/customPanel/PanelProperties.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
+        <state relative-caret-position="1870">
           <caret line="200" column="54" selection-start-line="200" selection-start-column="54" selection-end-line="200" selection-end-column="54" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="false" />
             <element signature="n#!!block;n#createGeneralTabGroups#0" expanded="false" />
             <element signature="e#2538#2620#0" expanded="false" />
             <element signature="e#2743#2818#0" expanded="false" />
@@ -1461,6 +995,7 @@
             <element signature="n#!!block;n#createFifthTabGroups#0" expanded="false" />
             <element signature="e#5254#5333#0" expanded="false" />
             <element signature="e#5553#5579#0" expanded="false" />
+            <element signature="n#!!block;n#createSixthTabGroups#0" expanded="false" />
             <element signature="e#5691#5768#0" expanded="false" />
             <element signature="e#6057#6086#0" expanded="false" />
             <element signature="n#!!block;n#createDiagramTabGroups#0" expanded="false" />
@@ -1487,240 +1022,204 @@
             <element signature="e#9516#9637#0" expanded="false" />
             <element signature="e#9759#10009#0" expanded="false" />
             <element signature="e#10022#10068#0" expanded="false" />
-            <marker date="1557769570414" expanded="false" signature="5664:6089" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bpmn-js/lib/features/modeling/BpmnUpdater.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10076">
+          <caret line="479" column="9" selection-start-line="479" selection-start-column="9" selection-end-line="479" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/HardwareProps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/ResponsibleProps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/SoftwareProps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/GuideProps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/FrequencyProps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/UpDiagramProps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        <state relative-caret-position="1826">
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/Telegram Desktop/index.js">
+    <entry file="file://C:/xampp/htdocs/bp/getOptions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="154">
+          <caret line="28" column="84" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/index.js">
+    <entry file="file://C:/xampp/htdocs/bp/get.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="355" selection-end-column="0" />
+        <state relative-caret-position="22">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/props.js">
+    <entry file="file://$PROJECT_DIR$/public/treeview.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="218">
+          <caret line="87" column="54" selection-start-line="87" selection-start-column="54" selection-end-line="87" selection-end-column="54" />
           <folding>
-            <element signature="e#193#254#0" expanded="false" />
-            <element signature="n#!!block;n#changeNewRoleStatus#0" expanded="false" />
-            <element signature="e#721#820#0" expanded="false" />
-            <element signature="e#830#929#0" expanded="false" />
-            <element signature="n#!!block;n#changeNewConditionStatus#0" expanded="false" />
-            <element signature="e#1014#1122#0" expanded="false" />
-            <element signature="e#1132#1240#0" expanded="false" />
-            <element signature="n#!!block;n#parseNodes#0" expanded="false" />
-            <element signature="e#1344#1566#0" expanded="false" />
-            <element signature="e#1388#1560#0" expanded="false" />
-            <element signature="e#1576#1668#0" expanded="false" />
-            <element signature="e#1762#2725#0" expanded="false" />
-            <element signature="e#1880#2477#0" expanded="false" />
-            <element signature="e#1946#2467#0" expanded="false" />
-            <element signature="e#2013#2430#0" expanded="false" />
-            <element signature="e#2186#2363#0" expanded="false" />
-            <element signature="e#2552#2650#0" expanded="false" />
-            <element signature="n#!!block;n#showSelectedNodes#0" expanded="false" />
-            <element signature="e#2988#4561#0" expanded="false" />
-            <element signature="e#3041#4555#0" expanded="false" />
-            <element signature="e#3562#3657#0" expanded="false" />
-            <element signature="e#3708#3827#0" expanded="false" />
-            <element signature="e#4122#4245#0" expanded="false" />
-            <element signature="e#4263#4444#0" expanded="false" />
-            <element signature="e#4571#5287#0" expanded="false" />
-            <element signature="e#4623#5281#0" expanded="false" />
-            <element signature="n#!!block;n#selectDefault#0" expanded="false" />
-            <element signature="e#5426#5480#0" expanded="false" />
-            <element signature="n#!!block;n#selectNewCondition#0" expanded="false" />
-            <element signature="e#5676#5736#0" expanded="false" />
-            <element signature="n#!!block;n#deleteCondition#0" expanded="false" />
-            <element signature="n#!!block;n#createNodes#0" expanded="false" />
-            <element signature="e#6276#6343#0" expanded="false" />
-            <element signature="n#!!block;n#getNodes#0" expanded="false" />
-            <element signature="e#6416#7136#0" expanded="false" />
-            <element signature="e#6475#6537#0" expanded="false" />
-            <element signature="e#6576#7130#0" expanded="false" />
-            <element signature="e#6717#6935#0" expanded="false" />
-            <element signature="n#!!block;n#fetchData#0" expanded="false" />
-            <element signature="e#7213#7272#0" expanded="false" />
-            <element signature="e#7285#7741#0" expanded="false" />
-            <element signature="e#7351#7385#0" expanded="false" />
-            <element signature="e#7424#7735#0" expanded="false" />
-            <element signature="e#7554#7658#0" expanded="false" />
-            <element signature="n#!!block;n#getOnlyRoles#0" expanded="false" />
-            <element signature="e#7900#8193#0" expanded="false" />
-            <element signature="e#8004#8187#0" expanded="false" />
-            <element signature="e#8059#8177#0" expanded="false" />
-            <element signature="n#!!block;n#getItemAndRole#0" expanded="false" />
-            <element signature="e#8460#8582#0" expanded="false" />
-            <element signature="e#8521#8576#0" expanded="false" />
-            <element signature="e#8716#9457#0" expanded="false" />
-            <element signature="e#8820#8950#0" expanded="false" />
-            <element signature="e#9038#9451#0" expanded="false" />
-            <element signature="e#9120#9395#0" expanded="false" />
-            <element signature="e#9203#9381#0" expanded="false" />
-            <element signature="e#9598#10086#0" expanded="false" />
-            <element signature="e#9692#9800#0" expanded="false" />
-            <element signature="e#9814#10080#0" expanded="false" />
-            <element signature="e#9863#10070#0" expanded="false" />
-            <element signature="e#9922#10056#0" expanded="false" />
-            <element signature="n#!!block;n#showPopupSelect#0" expanded="false" />
-            <element signature="n#!!block;n#getComboOptions#0" expanded="false" />
-            <element signature="e#11186#11943#0" expanded="false" />
-            <element signature="e#11252#11286#0" expanded="false" />
-            <element signature="e#11325#11937#0" expanded="false" />
-            <element signature="e#11552#11867#0" expanded="false" />
-            <element signature="n#!!block;n#showPopupSelect2#0" expanded="false" />
-            <element signature="n#!!block;n#getJustOptions#0" expanded="false" />
-            <element signature="e#12401#13732#0" expanded="false" />
-            <element signature="e#12467#12501#0" expanded="false" />
-            <element signature="e#12540#13726#0" expanded="false" />
-            <element signature="e#12801#13323#0" expanded="false" />
-            <element signature="e#12864#13202#0" expanded="false" />
-            <element signature="e#12924#13184#0" expanded="false" />
-            <element signature="e#13000#13130#0" expanded="false" />
-            <element signature="e#13409#13522#0" expanded="false" />
-            <element signature="n#!!block;n#selectNewJustOption#0" expanded="false" />
-            <element signature="e#13845#13927#0" expanded="false" />
-            <element signature="e#13937#14172#0" expanded="false" />
-            <element signature="e#13999#14082#0" expanded="false" />
-            <element signature="n#!!block;n#renderJustOptions#0" expanded="false" />
-            <element signature="e#14267#14393#0" expanded="false" />
-            <element signature="e#14312#14387#0" expanded="false" />
-            <element signature="e#14404#14902#0" expanded="false" />
-            <element signature="e#14497#14829#0" expanded="false" />
-            <element signature="n#!!block;n#deleteConditionJustOptions#0" expanded="false" />
-            <element signature="n#!!block;n#submit#0" expanded="false" />
-            <element signature="e#15138#15372#0" expanded="false" />
-            <element signature="e#15382#15565#0" expanded="false" />
-            <element signature="e#15642#16913#0" expanded="false" />
-            <element signature="e#15693#16620#0" expanded="false" />
-            <element signature="e#15759#16610#0" expanded="false" />
-            <element signature="e#15817#16573#0" expanded="false" />
-            <element signature="e#15919#16427#0" expanded="false" />
-            <element signature="e#16002#16335#0" expanded="false" />
-            <element signature="e#16089#16309#0" expanded="false" />
-            <element signature="e#16924#17003#0" expanded="false" />
-            <element signature="e#17008#17026#0" expanded="false" />
-            <element signature="n#!!block;n#deleteRow#0" expanded="false" />
-            <element signature="e#17706#20745#0" expanded="false" />
-            <element signature="e#17751#19226#0" expanded="false" />
-            <element signature="e#17825#18087#0" expanded="false" />
-            <element signature="e#18144#18488#0" expanded="false" />
-            <element signature="e#18567#18829#0" expanded="false" />
-            <element signature="e#18890#19212#0" expanded="false" />
-            <element signature="e#19245#20735#0" expanded="false" />
-            <element signature="e#19382#19632#0" expanded="false" />
-            <element signature="e#19689#20021#0" expanded="false" />
-            <element signature="e#20100#20350#0" expanded="false" />
-            <element signature="e#20411#20721#0" expanded="false" />
-            <element signature="n#!!block;n#changeTab#0" expanded="false" />
-            <element signature="e#21344#21496#0" expanded="false" />
-            <marker date="1557772672309" expanded="false" signature="3987:4002" placeholder="..." />
-            <marker date="1557772672309" expanded="false" signature="4178:4208" placeholder="..." />
-            <marker date="1557772672309" expanded="false" signature="4319:4337" placeholder="..." />
-            <marker date="1557772672309" expanded="false" signature="4729:4873" placeholder="..." />
-            <marker date="1557772672309" expanded="false" signature="5133:5148" placeholder="..." />
-            <marker date="1557772672309" expanded="false" signature="5828:5841" placeholder="..." />
-            <marker date="1557772672309" expanded="false" signature="5910:5942" placeholder="..." />
-            <marker date="1557772672309" expanded="false" signature="14563:14576" placeholder="..." />
-            <marker date="1557772672309" expanded="false" signature="14653:14685" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#getValueFromQueryString#0" expanded="false" />
-            <element signature="e#837#901#0" expanded="false" />
-            <element signature="e#907#1226#0" expanded="false" />
-            <element signature="e#1063#1164#0" expanded="false" />
-            <element signature="e#1170#1224#0" expanded="false" />
-            <element signature="e#1274#1438#0" expanded="false" />
-            <element signature="e#1316#1346#0" expanded="false" />
-            <element signature="e#1371#1396#0" expanded="false" />
-            <element signature="e#1407#1436#0" expanded="false" />
-            <element signature="e#1582#1666#0" expanded="false" />
-            <element signature="e#1961#2050#0" expanded="false" />
-            <element signature="e#2060#2110#0" expanded="false" />
-            <element signature="n#!!block;n#onAnyTextBoxChanged#0" expanded="false" />
-            <element signature="n#!!block;n#updateTags#0" expanded="false" />
-            <element signature="e#3827#3977#0" expanded="false" />
-            <element signature="e#4023#4096#0" expanded="false" />
-            <element signature="e#4234#4341#0" expanded="false" />
-            <element signature="e#4381#4769#0" expanded="false" />
-            <element signature="e#4441#4765#0" expanded="false" />
-            <element signature="e#4535#4620#0" expanded="false" />
-            <element signature="e#4637#4757#0" expanded="false" />
-            <element signature="e#4705#4747#0" expanded="false" />
-            <element signature="e#4806#6043#0" expanded="false" />
-            <element signature="e#4849#6039#0" expanded="false" />
-            <element signature="e#4868#4911#0" expanded="false" />
-            <element signature="e#4925#6033#0" expanded="false" />
-            <element signature="e#5131#5574#0" expanded="false" />
-            <element signature="e#5433#5555#0" expanded="false" />
-            <element signature="e#5588#5631#0" expanded="false" />
-            <element signature="e#6081#6871#0" expanded="false" />
-            <element signature="e#6124#6867#0" expanded="false" />
-            <element signature="e#6143#6186#0" expanded="false" />
-            <element signature="e#6200#6861#0" expanded="false" />
-            <element signature="e#6407#6851#0" expanded="false" />
-            <element signature="e#6710#6832#0" expanded="false" />
-            <element signature="n#!!block;n#openDiagram#0" expanded="false" />
-            <element signature="e#6975#7644#0" expanded="false" />
-            <element signature="e#6995#7082#0" expanded="false" />
-            <element signature="e#7300#7330#0" expanded="false" />
-            <element signature="e#7565#7578#0" expanded="false" />
-            <element signature="n#!!block;n#saveDiagram#0" expanded="false" />
-            <element signature="e#7737#7768#0" expanded="false" />
-            <element signature="e#7849#8025#0" expanded="false" />
-            <element signature="e#8041#8773#0" expanded="false" />
-            <element signature="e#8163#8486#0" expanded="false" />
-            <element signature="e#8236#8423#0" expanded="false" />
-            <element signature="e#8279#8411#0" expanded="false" />
-            <element signature="e#8429#8480#0" expanded="false" />
-            <element signature="e#8534#8706#0" expanded="false" />
-            <element signature="e#8576#8698#0" expanded="false" />
-            <element signature="n#!!block;n#pushToServer#0" expanded="false" />
-            <element signature="e#9217#9352#0" expanded="false" />
-            <element signature="e#9383#9808#0" expanded="false" />
-            <element signature="e#9864#10030#0" expanded="false" />
-            <element signature="e#10090#10140#0" expanded="false" />
-            <element signature="n#!!block;n#debounce#0" expanded="false" />
-            <element signature="e#10263#10376#0" expanded="false" />
-            <element signature="e#10284#10328#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/myIndex.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
+        <state relative-caret-position="448">
           <caret line="299" column="3" selection-start-line="299" selection-start-column="3" selection-end-line="299" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="369" column="13" selection-start-line="369" selection-start-column="13" selection-end-line="369" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/factory/ElementFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2178">
+          <caret line="251" column="57" selection-start-line="251" selection-start-column="57" selection-end-line="251" selection-end-column="57" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
-            <element signature="e#137#200#0" expanded="true" />
+            <element signature="n#!!block;n#ratingBox#0" expanded="false" />
+            <element signature="n#!!block;n#textBox#0" expanded="false" />
+            <element signature="e#1445#1521#0" expanded="false" />
+            <element signature="e#1951#2168#0" expanded="false" />
+            <element signature="e#2178#2398#0" expanded="false" />
+            <element signature="e#2404#2449#0" expanded="false" />
+            <element signature="n#!!block;n#file#0" expanded="false" />
+            <element signature="e#4290#5058#0" expanded="false" />
+            <element signature="e#4338#5052#0" expanded="false" />
+            <element signature="n#!!block;n#hiddenTagBox#0" expanded="false" />
+            <element signature="n#!!block;n#textarea#0" expanded="false" />
+            <element signature="e#6085#6161#0" expanded="false" />
+            <element signature="e#7013#7082#0" expanded="false" />
+            <element signature="e#8043#8088#0" expanded="false" />
+            <element signature="e#8193#8213#0" expanded="false" />
+            <marker date="1562159224861" expanded="false" signature="1106:1118" placeholder="..." />
+            <marker date="1562159224861" expanded="true" signature="3299:3455" placeholder="..." />
+            <marker date="1562159224861" expanded="true" signature="3334:3391" placeholder="..." />
+            <marker date="1562159224861" expanded="true" signature="3334:3393" placeholder="..." />
+            <marker date="1562159224861" expanded="true" signature="3334:3412" placeholder="..." />
+            <marker date="1562159224861" expanded="true" signature="3334:3455" placeholder="..." />
+            <marker date="1562159224861" expanded="false" signature="3946:3990" placeholder="..." />
+            <marker date="1562159224861" expanded="false" signature="4624:4636" placeholder="..." />
+            <marker date="1562159224861" expanded="false" signature="4945:4980" placeholder="..." />
+            <marker date="1562159224861" expanded="false" signature="5728:5743" placeholder="..." />
+            <marker date="1562159224861" expanded="false" signature="6534:6630" placeholder="..." />
+            <marker date="1562159224861" expanded="false" signature="7372:7407" placeholder="..." />
+            <marker date="1562159224861" expanded="true" signature="7977:7989" placeholder="..." />
+            <marker date="1562159224861" expanded="false" signature="8762:8797" placeholder="..." />
+            <marker date="1562159224861" expanded="true" signature="9192:9204" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/customPanel/parts/GeneralNameProps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/props.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <element signature="n#!!block;n#selectNewJustOption#0" expanded="false" />
+            <element signature="e#14124#14206#0" expanded="false" />
+            <element signature="e#14216#14451#0" expanded="false" />
+            <element signature="e#14278#14361#0" expanded="false" />
+            <element signature="n#!!block;n#renderJustOptions#0" expanded="false" />
+            <element signature="e#14546#14672#0" expanded="false" />
+            <element signature="e#14591#14666#0" expanded="false" />
+            <element signature="e#14683#15181#0" expanded="false" />
+            <element signature="e#14776#15108#0" expanded="false" />
+            <element signature="n#!!block;n#deleteConditionJustOptions#0" expanded="false" />
+            <element signature="e#15417#15651#0" expanded="false" />
+            <element signature="e#15661#15844#0" expanded="false" />
+            <element signature="e#16081#16837#0" expanded="false" />
+            <element signature="e#16183#16691#0" expanded="false" />
+            <element signature="e#16266#16599#0" expanded="false" />
+            <element signature="e#16353#16573#0" expanded="false" />
+            <element signature="e#17188#17267#0" expanded="false" />
+            <element signature="e#17272#17290#0" expanded="false" />
+            <element signature="n#!!block;n#deleteRow#0" expanded="false" />
+            <element signature="e#18015#19490#0" expanded="false" />
+            <element signature="e#18089#18351#0" expanded="false" />
+            <element signature="e#18408#18752#0" expanded="false" />
+            <element signature="e#18831#19093#0" expanded="false" />
+            <element signature="e#19154#19476#0" expanded="false" />
+            <element signature="e#19646#19896#0" expanded="false" />
+            <element signature="e#19953#20285#0" expanded="false" />
+            <element signature="e#20364#20614#0" expanded="false" />
+            <element signature="e#20675#20985#0" expanded="false" />
+            <element signature="n#!!block;n#changeTab#0" expanded="false" />
+            <element signature="e#21608#21760#0" expanded="false" />
+            <marker date="1562180653763" expanded="true" signature="3972:3987" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="4163:4193" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="4304:4322" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="4714:4858" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="5118:5133" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="5813:5826" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="5895:5927" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="14842:14855" placeholder="..." />
+            <marker date="1562180653763" expanded="true" signature="14932:14964" placeholder="..." />
           </folding>
         </state>
       </provider>
